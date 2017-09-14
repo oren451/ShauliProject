@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/11.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <header>
+        <h1>Ha-Blog Shel Shauli</h1>
+    </header>
+    <nav>
+        <!-- Navigation -->
+        <ul>
+            <li class="selected"><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="/FanClubs/Index">Fans Club</a></li> <!--Convert To Razor-->
+            <li><a href="#">Contact</a></li>
+            <li class="subscribe">
+                <a href="#">
+                    <div id="transDemo2">
+                        <div class="hover">
+                            <img src="/Content/Images/rss.png" width="30" height="30">
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li><a href="#">Subscribe via. RSS</a></li>
+
+        </ul>
+    </nav>
+    <section id="intro">
+        <!-- Introduction -->
+        <header>
+            <h2>Do you have questions for me?</h2>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+        <img src="/Content/Images/intro_shauli.png" alt="Shauli" />
+    </section>
+<div id="content">
+  
+    <div id="mainContent">
+        @RenderBody()
+
+    </div>
+    <aside>
+        <section>
+            <header>
+                <h3>Categories</h3>
+            </header>
+            <ul>
+                <li><a href="#">Lorem ipsum dolor</a></li>
+                <li><a href="#">Sit amet consectetur</a></li>
+                <li><a href="#">Adipisicing elit sed</a></li>
+            </ul>
+        </section>
+        <section>
+            <header>
+                <h3>Archives</h3>
+            </header>
+            <ul>
+                <li><a href="#">December 2008</a></li>
+                <li><a href="#">January 2009</a></li>
+                <li><a href="#">February 2009</a></li>
+                <li><a href="#">March 2009</a></li>
+            </ul>
+        </section>
+    </aside>
+</div>
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <!-- Footer -->
+            <div>
+                <section id="audio">
+                    <audio autoplay="autoplay" loop="loop">
+                        <source src="horse.mp3" type="audio/mpeg">
+                    </audio>
+                </section>
+                <section id="about">
+                    <header>
+                        <h3>About</h3>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
+                </section>
+                <section id="blogroll">
+                    <header>
+                        <h3>Blogroll</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">NETTUTS+</a></li>
+                        <li><a href="#">FreelanceSwitch</a></li>
+                    </ul>
+                </section>
+                <section id="popular">
+                    <header>
+                        <h3>Popular</h3>
+                    </header>
+                    <ul>
+                        <li><a href="#">This is the title of a blog post</a></li>
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Consectetur adipisicing elit, sed do eiusmod</a></li>
+                    </ul>
+                </section>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

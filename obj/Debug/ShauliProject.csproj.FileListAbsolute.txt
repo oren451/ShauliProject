@@ -1,0 +1,328 @@
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\ApplicationInsights.config
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\csc.exe
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\System.Collections.Immutable.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\vbc.exe
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\VBCSCompiler.exe
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\roslyn\VBCSCompiler.exe.config
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\ShauliProject.dll.config
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\ShauliProject.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\ShauliProject.pdb
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Antlr3.Runtime.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\EntityFramework.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\EntityFramework.SqlServer.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.Web.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.WindowsServer.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.ApplicationInsights.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Google.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Web.Infrastructure.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Newtonsoft.Json.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Owin.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Helpers.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Mvc.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Optimization.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Razor.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.WebPages.Deployment.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.WebPages.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.WebPages.Razor.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\WebGrease.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.Web.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AI.WindowsServer.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.ApplicationInsights.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Helpers.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Mvc.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Optimization.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.Razor.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.WebPages.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.WebPages.Deployment.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\System.Web.WebPages.Razor.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Antlr3.Runtime.pdb
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Newtonsoft.Json.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\EntityFramework.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\EntityFramework.SqlServer.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Google.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\obj\Debug\ShauliProject.dll
+c:\users\תומר\documents\visual studio 2015\Projects\ShauliProject\ShauliProject\obj\Debug\ShauliProject.pdb
+C:\Users\תומר\Documents\Visual Studio 2015\Projects\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\ApplicationInsights.config
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\csc.exe
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\vbc.exe
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\ShauliProject.dll.config
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\ShauliProject.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\ShauliProject.pdb
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Antlr3.Runtime.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\EntityFramework.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\EntityFramework.SqlServer.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.Web.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.ApplicationInsights.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Newtonsoft.Json.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Owin.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Helpers.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Mvc.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Optimization.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Razor.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.WebPages.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\WebGrease.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.Web.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.ApplicationInsights.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Helpers.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Mvc.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Optimization.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.Razor.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.WebPages.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Antlr3.Runtime.pdb
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Newtonsoft.Json.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\EntityFramework.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\EntityFramework.SqlServer.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\obj\Debug\ShauliProject.dll
+C:\Users\תומר\Documents\Visual Studio 2015\My Exported Templates\ex2\ShauliProject\ShauliProject\obj\Debug\ShauliProject.pdb
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\ApplicationInsights.config
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\csc.exe
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\vbc.exe
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\ShauliProject.dll.config
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\ShauliProject.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\ShauliProject.pdb
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Antlr3.Runtime.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\EntityFramework.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\EntityFramework.SqlServer.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.Web.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.ApplicationInsights.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Newtonsoft.Json.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Owin.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Helpers.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Mvc.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Optimization.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Razor.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.WebPages.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\WebGrease.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.Web.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.ApplicationInsights.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Helpers.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Mvc.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Optimization.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.Razor.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.WebPages.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Antlr3.Runtime.pdb
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Newtonsoft.Json.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\EntityFramework.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\EntityFramework.SqlServer.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\obj\Debug\ShauliProject.dll
+C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\obj\Debug\ShauliProject.pdb
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ApplicationInsights.config
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\csc.exe
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\vbc.exe
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.dll.config
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.pdb
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Antlr3.Runtime.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\EntityFramework.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\EntityFramework.SqlServer.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.Web.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.ApplicationInsights.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Newtonsoft.Json.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Owin.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Helpers.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Mvc.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Optimization.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Razor.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.WebPages.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\WebGrease.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.Web.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.ApplicationInsights.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Helpers.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Mvc.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Optimization.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.Razor.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.WebPages.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Antlr3.Runtime.pdb
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Newtonsoft.Json.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\EntityFramework.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\EntityFramework.SqlServer.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.pdb
