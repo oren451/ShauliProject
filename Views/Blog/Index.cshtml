@@ -4,59 +4,90 @@
     ViewBag.Title = "Index";
 }
 
+<form action="#">
+    <h3>Search post</h3>
+    Date between: <input id="inputDateStart" type="date" name="startDate"> to <input id="inputDateEnd" type="date" name="endDate">
+    <br/>
+    Author name: <input id="inputAuthor" type="text" name="Full name">
+    <br/>
+    E-mail: <input id="inputEmail" type="email" name="email">
+    <br/>
+    Words from posts: <input type="text" name="wordFromPosts">
+    <br/>
+    Minimum replys for post: <input type="range" name="points" min="0" max="10">
+    <br/>
+    <input type="submit" value="Search">
+</form>
+
 @Html.ActionLink("Create New", "Create")
 
 @foreach (var item in Model)
 {
-<section>
-    <article class="blogPost">
-        <header>
-            <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
-            <p>Posted on <time datetime="2009-06-29T23:31+01:00">@Html.DisplayFor(modelItem => item.PublishDate)</time> by <a href="#">@Html.DisplayFor(modelItem => item.AuthorName)</a> - <a href="#comments">3 comments</a>
-            </p>
-        </header>
-        <div>
-            <p>@Html.DisplayFor(modelItem => item.Content)</p>
-            <img src="images/flower.png" alt="Flower"/> <!--Html.DisplayNameFor(model => model.Image)-->
-            <video controls="controls">
-                <source src="images/shauli.m4v" type="video/mp4"/>
-                <!--Html.DisplayNameFor(model => model.Video)-->
-            </video>
-        </div>
-    </article>
-</section>
-    <section id="comments">
-        <h3>Comments</h3>
-        <article>
-            @foreach (var comment in item.Comments)
-            {
-                <header>
-                    <a href="#">@Html.DisplayFor(modelItem => comment.CommentWriter)</a>
-                </header>
-                <p>@Html.DisplayFor(modelItem => comment.Content)</p>
-            }
+    <section>
+        <article class="blogPost">
+            <header>
+                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                <p>
+                    Posted on <time datetime="2009-06-29T23:31+01:00">@Html.DisplayFor(modelItem => item.PublishDate)</time> by <a href="#">@Html.DisplayFor(modelItem => item.AuthorName)</a> - <a href="#comments">@Html.DisplayFor(modelItem => item.Comments.Count) comments</a>
+                </p>
+            </header>
+            <div>
+                <p>@Html.DisplayFor(Model => item.Content)</p>
+                <br/>
+                @if (item.Image != null)
+                {
+                    <img src="@Html.DisplayFor(Model => item.Image)" alt="picture"/>
+                }
+                <br/>
+                @if (item.Video != null)
+                {
+                    <video controls="controls">
+                        <source src="@Html.DisplayFor(Model => item.Video)" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                }
+            </div>
         </article>
     </section>
-    <form action="#" method="post">
-        <h3>Post a comment</h3>
-        <p>
-            <label for="name">Title</label>
-            <input name="name" id="name" type="text" required />
-        </p>
-        <p>
-            <label for="email">Comment Writer</label>
-            <input name="email" id="email" type="email" required />
-        </p>
-        <p>
-            <label for="website">CommentWriterSite</label>
-            <input name="website" id="website" type="url" />
-        </p>
-        <p>
-            <label for="comment">Comment</label>
-            <textarea name="comment" id="comment" required></textarea>
-        </p>
-        <p>@Html.ActionLink("Add Comment", "AddComment")</p>
-    </form>
-
- }
-
+    <div id="@Html.DisplayFor(Model => item.Id)">
+        <section id="comments">
+            <h3>Comments</h3>
+            <article>
+                @foreach (var comment in item.Comments)
+                {
+                    <article>
+                        <header>
+                            <a href="@Html.DisplayFor(Model => comment.CommentWriterSite)">@Html.DisplayFor(Model => comment.CommentWriter)</a>
+                        </header>
+                        <p>@Html.DisplayFor(Model => comment.Content)</p>
+                    </article>
+                }
+            </article>
+        </section>
+    </div>
+    using (Html.BeginForm("AddComment", "Blog"))
+     {
+         @Html.AntiForgeryToken()
+         <h3>Post a comment</h3>
+         @Html.Hidden("PostId", item.Id)
+         <p>
+             <label for="Name">Name</label>
+             @Html.TextBox("WriterComment")
+         </p>
+         <p>
+             <label for="Website">Website</label>
+             @Html.TextBox("WriterURL")
+         </p>
+         <p>
+             <label for="TitleComment">Title</label>
+             @Html.TextBox("TitleComment")
+         </p>
+         <p>
+             <label for="Comment">Comment</label>
+             @Html.TextBox("Content")
+         </p>
+         <p>
+             <input type="submit" value="Post comment"/>
+         </p>
+     }
+}

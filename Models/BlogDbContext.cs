@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -10,5 +10,6 @@ namespace ShauliProject.Models
     {
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<FanClub> Fan { get; set; }
     }
 }

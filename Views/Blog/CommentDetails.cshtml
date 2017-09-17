@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ShauliProject.Models.Comment>
+
+@{
+    ViewData["Title"] = "Comments Details";
+}
+
+<h2>Comment Details:</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentWriter)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CommentWriterSite)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommentWriter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommentWriterSite)
+            </td>
+            <td>
+                <a href="@Url.Action("DeleteComment", "Blog")">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<a href="@Url.Action("Management", "Blog")">Back to post list</a>

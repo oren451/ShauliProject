@@ -292,6 +292,9 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\Management.cshtml" />
+    <Content Include="Views\Blog\CommentDetails.cshtml" />
+    <Content Include="Views\Blog\DeleteComment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

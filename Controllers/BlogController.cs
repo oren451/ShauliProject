@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -12,10 +13,14 @@ namespace ShauliProject.Controllers
 {
     public class BlogController : Controller
     {
-        private BlogDbContext db = new BlogDbContext();
+        private readonly BlogDbContext db = new BlogDbContext();
 
-        // GET: Blog
         public ActionResult Index()
+        {
+            return View(db.Posts.Include(c => c.Comments).ToList());
+        }
+
+        public ActionResult Management()
         {
             return View(db.Posts.ToList());
         }
@@ -27,7 +32,9 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+
+            Post post = db.Posts.Single(m => m.Id == id);
+
             if (post == null)
             {
                 return HttpNotFound();
@@ -46,14 +53,14 @@ namespace ShauliProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(
-            [Bind(Include = "ID,Title,AuthorName,AuthorSite,PublishDate,Content,Image,Video")] Post post)
+        public ActionResult Create(Post post)
         {
             if (ModelState.IsValid)
             {
+                post.PublishDate = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Management");
             }
 
             return View(post);
@@ -66,7 +73,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.Single(m => m.Id == id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -79,16 +86,29 @@ namespace ShauliProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(
-            [Bind(Include = "ID,Title,AuthorName,AuthorSite,PublishDate,Content,Image,Video")] Post post)
+        public ActionResult Edit(Post post)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(post).State = EntityState.Modified;
+                db.Posts.AddOrUpdate(post);
+                db.SaveChanges();
+                return RedirectToAction("Management");
+            }
+            return View(post);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditComment(Comment comment)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Comments.AddOrUpdate(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(post);
+            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post", comment.PostId);
+            return View(comment);
         }
 
         // GET: Blog/Delete/5
@@ -98,7 +118,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.Single(p => p.Id == id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -111,10 +131,10 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Post post = db.Posts.Find(id);
+            Post post = db.Posts.Single(m => m.Id == id);
             db.Posts.Remove(post);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Management");
         }
 
         protected override void Dispose(bool disposing)
@@ -126,17 +146,68 @@ namespace ShauliProject.Controllers
             base.Dispose(disposing);
         }
 
+        public ActionResult AddComment()
+        {
+            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post");
+            return View();
+        }
+
         [HttpPost]
-        public ActionResult AddComment(
-            [Bind(Include = "CommentID,PostID,Title,CommentWriter,CommentWriterSite,Content,Post")] Comment comment)
+        public ActionResult AddComment(Comment comment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(comment).State = EntityState.Modified;
+                db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post", comment.PostId);
+            return View(comment);
+        }
+
+        [ActionName("DeleteComment")]
+        public ActionResult DeleteComment(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            Comment comment = db.Comments.Single(m => m.CommentId == id);
+            if (comment == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(comment);
+        }
+
+        // POST: Comments/Delete/5
+        [HttpPost, ActionName("DeleteComment")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteCommentConfirmed(int id)
+        {
+            Comment comment = db.Comments.Single(m => m.CommentId == id);
+            int temp = comment.PostId;
+            db.Comments.Remove(comment);
+            db.SaveChanges();
+            return RedirectToAction("CommentDetails", new { id = temp });
+        }
+
+        public ActionResult CommentDetails(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            var comments = db.Comments.Where(m => m.PostId == id).ToList();
+            if (comments == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(comments);
         }
     }
 }
