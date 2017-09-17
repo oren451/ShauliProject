@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ShauliProject.Models.Post>
+﻿@using ShauliProject.Controllers
+@model IEnumerable<ShauliProject.Models.Post>
 
 @{
     ViewBag.Title = "Index";
@@ -19,7 +20,7 @@
     <input type="submit" value="Search">
 </form>
 
-@Html.ActionLink("Create New", "Create")
+
 
 @foreach (var item in Model)
 {
@@ -57,7 +58,7 @@
                 {
                     <article>
                         <header>
-                            <a href="@Html.DisplayFor(Model => comment.CommentWriterSite)">@Html.DisplayFor(Model => comment.CommentWriter)</a>
+                            <a href="/Blog/CommentDetails/@Html.DisplayFor(Model => comment.CommentId)">@Html.DisplayFor(Model => comment.CommentWriter)</a>
                         </header>
                         <p>@Html.DisplayFor(Model => comment.Content)</p>
                     </article>
@@ -72,15 +73,15 @@
          @Html.Hidden("PostId", item.Id)
          <p>
              <label for="Name">Name</label>
-             @Html.TextBox("WriterComment")
+             @Html.TextBox("CommentWriter")
          </p>
          <p>
              <label for="Website">Website</label>
-             @Html.TextBox("WriterURL")
+             @Html.TextBox("CommentWriterSite")
          </p>
          <p>
              <label for="TitleComment">Title</label>
-             @Html.TextBox("TitleComment")
+             @Html.TextBox("Title")
          </p>
          <p>
              <label for="Comment">Comment</label>

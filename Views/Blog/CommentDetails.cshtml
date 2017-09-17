@@ -10,7 +10,7 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
-        </th>
+     </th>
         <th>
             @Html.DisplayNameFor(model => model.Content)
         </th>
@@ -39,7 +39,7 @@
                 @Html.DisplayFor(modelItem => item.CommentWriterSite)
             </td>
             <td>
-                <a href="@Url.Action("DeleteComment", "Blog")">Delete</a>
+                <a href="/Blog/DeleteComment/@Html.DisplayFor(Model => item.CommentId)">Delete Comments</a>
             </td>
         </tr>
     }

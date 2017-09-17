@@ -149,7 +149,7 @@ namespace ShauliProject.Controllers
         public ActionResult AddComment()
         {
             ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post");
-            return View();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -162,7 +162,7 @@ namespace ShauliProject.Controllers
                 return RedirectToAction("Index");
             }
             ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post", comment.PostId);
-            return View(comment);
+            return RedirectToAction("Index");
         }
 
         [ActionName("DeleteComment")]
@@ -201,7 +201,7 @@ namespace ShauliProject.Controllers
                 return HttpNotFound();
             }
 
-            var comments = db.Comments.Where(m => m.PostId == id).ToList();
+            var comments = db.Comments.Where(m => m.CommentId == id).ToList();
             if (comments == null)
             {
                 return HttpNotFound();

@@ -37,10 +37,16 @@
         </dd>
     </dl>
 
-    <form @Url.Action("DeleteComment", "Blog")>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            <a @Url.Action("Management", "Blog")>Back to List</a>
+            @Html.ActionLink("Back to List", "Index")
         </div>
-    </form>
+    }
+    
+    
+
 </div>

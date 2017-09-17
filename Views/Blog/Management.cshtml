@@ -25,10 +25,10 @@
                 @Html.DisplayFor(modelItem => item.AuthorName)
             </td>
             <td>
-                <a href="@Url.Action("Edit", "Blog")">Edit</a> |
-                <a href="@Url.Action("Details", "Blog")">Details</a> |
-                <a href="@Url.Action("Delete", "Blog")">Delete</a> |
-                <a href="@Url.Action("CommentDetails", "Blog")">Comments</a>
+                <a href="/Blog/Edit/@Html.DisplayFor(Model => item.Id)">Edit</a> |
+                <a href="/Blog/Details/@Html.DisplayFor(Model => item.Id)">Details</a> |
+                <a href="/Blog/Delete/@Html.DisplayFor(Model => item.Id)">Delete</a> |
+                <a href="/Blog/CommentDetails/@Html.DisplayFor(Model => item.Id)">Comments</a>
             </td>
         </tr>
     }
