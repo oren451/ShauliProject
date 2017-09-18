@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<ShauliProject.Models.Comment>
 
+
 @{
     ViewData["Title"] = "Comments Details";
 }
@@ -39,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.CommentWriterSite)
             </td>
             <td>
-                <a href="/Blog/DeleteComment/@Html.DisplayFor(Model => item.CommentId)">Delete Comments</a>
+                <a href="/Blog/DeleteComment/@Html.DisplayFor(Model => item.CommentId)">Delete Comment</a>
             </td>
         </tr>
     }

@@ -5,20 +5,20 @@
     ViewBag.Title = "Index";
 }
 
+<div class ="search">
 <form action="#">
     <h3>Search post</h3>
     Date between: <input id="inputDateStart" type="date" name="startDate"> to <input id="inputDateEnd" type="date" name="endDate">
-    <br/>
     Author name: <input id="inputAuthor" type="text" name="Full name">
-    <br/>
+    <br>
     E-mail: <input id="inputEmail" type="email" name="email">
-    <br/>
     Words from posts: <input type="text" name="wordFromPosts">
     <br/>
     Minimum replys for post: <input type="range" name="points" min="0" max="10">
     <br/>
     <input type="submit" value="Search">
 </form>
+</div>
 
 
 
@@ -58,7 +58,7 @@
                 {
                     <article>
                         <header>
-                            <a href="/Blog/CommentDetails/@Html.DisplayFor(Model => comment.CommentId)">@Html.DisplayFor(Model => comment.CommentWriter)</a>
+                           @Html.DisplayFor(Model => comment.CommentWriter)
                         </header>
                         <p>@Html.DisplayFor(Model => comment.Content)</p>
                     </article>

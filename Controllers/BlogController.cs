@@ -201,7 +201,8 @@ namespace ShauliProject.Controllers
                 return HttpNotFound();
             }
 
-            var comments = db.Comments.Where(m => m.CommentId == id).ToList();
+    
+            var comments = db.Comments.Where(m => m.PostId == id).ToList();
             if (comments == null)
             {
                 return HttpNotFound();
