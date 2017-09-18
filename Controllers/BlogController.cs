@@ -90,6 +90,7 @@ namespace ShauliProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.PublishDate = DateTime.Now;
                 db.Posts.AddOrUpdate(post);
                 db.SaveChanges();
                 return RedirectToAction("Management");
