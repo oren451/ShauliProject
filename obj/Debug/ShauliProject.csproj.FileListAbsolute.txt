@@ -245,18 +245,6 @@ C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\obj\Debug\ShauliProject
 C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\obj\Debug\ShauliProject.dll
 C:\Users\orenk\Desktop\ex2.5\ShauliProject\ShauliProject\obj\Debug\ShauliProject.pdb
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ApplicationInsights.config
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\csc.exe
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\vbc.exe
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\VBCSCompiler.exe
-C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.dll.config
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.dll
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.pdb
@@ -408,3 +396,7 @@ C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\bin\Microsoft.Owin.Se
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.dll
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.pdb
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\System.Diagnostics.DiagnosticSource.xml
