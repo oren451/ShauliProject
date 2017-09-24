@@ -1,0 +1,55 @@
+﻿@model System.Collections.Generic.List<ShauliProject.Models.Post>
+
+@{
+    ViewBag.Title = "Search results";
+}
+
+<h2>Search results</h2>
+
+@foreach (var item in Model)
+{
+    <section>
+        <article class="blogPost">
+            <header>
+                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                <p>
+                    Posted on <time datetime="2009-06-29T23:31+01:00">@Html.DisplayFor(modelItem => item.PublishDate)</time> by <a href="#">@Html.DisplayFor(modelItem => item.AuthorName)</a> - <a href="#comments">@Html.DisplayFor(modelItem => item.Comments.Count) comments</a>
+                </p>
+            </header>
+            <div>
+                <p>@Html.DisplayFor(Model => item.Content)</p>
+                <br/>
+            </div>
+            <div>
+                @if (item.Image != null)
+                {
+                    <img src="@Html.DisplayFor(Model => item.Image)" alt="picture"/>
+                }
+                <br/>
+                @if (item.Video != null)
+                {
+                    <video controls="controls">
+                        <source src="@Html.DisplayFor(Model => item.Video)" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                }
+            </div>
+        </article>
+    </section>
+    <div id="@Html.DisplayFor(Model => item.Id)">
+        <section id="comments">
+            <h3>Comments</h3>
+            <article>
+                @foreach (var comment in item.Comments)
+                {
+                    <article>
+                        <header>
+                            @Html.DisplayFor(Model => comment.CommentWriter)
+                        </header>
+                        <p>@Html.DisplayFor(Model => comment.Content)</p>
+                    </article>
+                }
+            </article>
+        </section>
+    </div>
+}

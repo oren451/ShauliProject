@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using ShauliProject.Models;
 
 namespace ShauliProject.Controllers
@@ -17,6 +18,8 @@ namespace ShauliProject.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.authorList = new SelectList(db.Posts.Select(x => x.AuthorName).Distinct().OrderBy(x => x)).Items;
+
             return View(db.Posts.Include(c => c.Comments).ToList());
         }
 
@@ -194,7 +197,7 @@ namespace ShauliProject.Controllers
             int temp = comment.PostId;
             db.Comments.Remove(comment);
             db.SaveChanges();
-            return RedirectToAction("CommentDetails", new { id = temp });
+            return RedirectToAction("CommentDetails", new {id = temp});
         }
 
         public ActionResult CommentDetails(int? id)
@@ -204,7 +207,7 @@ namespace ShauliProject.Controllers
                 return HttpNotFound();
             }
 
-    
+
             var comments = db.Comments.Where(m => m.PostId == id).ToList();
             if (comments == null)
             {
@@ -212,6 +215,14 @@ namespace ShauliProject.Controllers
             }
 
             return View(comments);
+        }
+
+        public ActionResult Search(string title, string author, string content)
+        {
+            return View(db.Posts.Where(c =>
+                (!(title == null || title.Trim() == string.Empty) || c.Title.Contains(title))
+                && (!(author == null || author.Trim() == string.Empty) || c.AuthorName == author)
+                && (!(content == null || content == string.Empty) || c.Content.Contains(content))).ToList());
         }
     }
 }

@@ -394,3 +394,5 @@ C:\Users\תומר\source\repos\ShauliProject\ShauliProject\bin\Microsoft.AspNet.
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.UserRole.resources
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.Migrations.UserRole.resources
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
