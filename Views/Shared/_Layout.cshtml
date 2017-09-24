@@ -12,84 +12,99 @@
 <header>
     <h1>Ha-Blog Shel Shauli</h1>
 </header>
-<nav class="navbar navbar-default navbar-collapse collapse" id="head-navbar">
+<nav class="navbar navbar-default">
     <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li>
-                <a href="/Blog">Blog</a>
-            </li>
-            <li>
-                <a href="/Blog/Management">Management</a>
-            </li>
-            <li>
-                <a href="/FanClubs/Index">Fans Club</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
+        <div class="navbar-header">
 
-        </ul>
-        <ul class="nav navbar-nav pull-right">
-            <li>
-                <div id="transDemo2">
-                    <img class="hover" alt="rss pic" src="/Content/Images/rss.png" style="float: left;" width="10" height="10">
-                </div>
-                <a href="#" style="display: inline-block; padding: 2px;">&nbsp; Subscribe via. RSS</a>
-            </li>
-        </ul>
-    </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-sm-push-8">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Blog">Blog</a></li>
+                    <li><a href="/Blog/Management">Management</a></li>
+                    <li><a href="/FanClubs/Index">Fans Club</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Subscribe via. RSS</a></li>
+                    <li>
+                        <div id="transDemo2">
+                            <img class="hover" alt="rss pic" src="/Content/Images/rss.png" style="float: left;" width="10" height="10">
+
+                        </div>
+                    </li>
+
+                </ul>
+       
+
+                <!--place to login\sign-up-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.Partial("_LoginPartial")</li>
+                   
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div><!--/.container-fluid -->
 </nav>
-<section id="intro">
+    
+<section id="intro">         
     <!-- Introduction -->
-    <header>
-        <h2>Do you have questions for me?</h2>
-    </header>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-    <img src="/Content/Images/intro_shauli.png" alt="Shauli"/>
+    
+            <header>
+                <h2>Do you have questions for me?</h2>
+            </header>
+ 
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+  
+    
+            <img src="/Content/Images/intro_shauli.png" alt="Shauli"/>
 </section>
+
+ 
+   
 <div id="content">
 
     <div id="mainContent">
         @RenderBody()
 
     </div>
-    <aside>
-        <section>
-            <header>
-                <h3>Categories</h3>
-            </header>
-            <ul>
-                <li>
-                    <a href="#">Lorem ipsum dolor</a>
-                </li>
-                <li>
-                    <a href="#">Sit amet consectetur</a>
-                </li>
-                <li>
-                    <a href="#">Adipisicing elit sed</a>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <header>
-                <h3>Archives</h3>
-            </header>
-            <ul>
-                <li>
-                    <a href="#">December 2008</a>
-                </li>
-                <li>
-                    <a href="#">January 2009</a>
-                </li>
-                <li>
-                    <a href="#">February 2009</a>
-                </li>
-                <li>
-                    <a href="#">March 2009</a>
-                </li>
-            </ul>
-        </section>
-    </aside>
+
+        <aside>
+            <section>
+                <header>
+                    <h3>Categories</h3>
+                </header>
+                <ul>
+                    <li>
+                        <a href="#">Lorem ipsum dolor</a>
+                    </li>
+                    <li>
+                        <a href="#">Sit amet consectetur</a>
+                    </li>
+                    <li>
+                        <a href="#">Adipisicing elit sed</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <header>
+                    <h3>Archives</h3>
+                </header>
+                <ul>
+                    <li>
+                        <a href="#">December 2008</a>
+                    </li>
+                    <li>
+                        <a href="#">January 2009</a>
+                    </li>
+                    <li>
+                        <a href="#">February 2009</a>
+                    </li>
+                    <li>
+                        <a href="#">March 2009</a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
 </div>
 <div class="container body-content">
     <hr/>

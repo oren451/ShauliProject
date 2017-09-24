@@ -20,6 +20,8 @@ namespace ShauliProject.Controllers
             return View(db.Posts.Include(c => c.Comments).ToList());
         }
 
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Management()
         {
             return View(db.Posts.ToList());
