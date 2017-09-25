@@ -219,10 +219,16 @@ namespace ShauliProject.Controllers
 
         public ActionResult Search(string title, string author, string content)
         {
-            return View(db.Posts.Where(c =>
-                (!(title == null || title.Trim() == string.Empty) || c.Title.Contains(title))
-                && (!(author == null || author.Trim() == string.Empty) || c.AuthorName == author)
-                && (!(content == null || content == string.Empty) || c.Content.Contains(content))).ToList());
+            List<Post> posts = db.Posts.Where(c =>
+                !(title == null || title.Trim() == string.Empty) && c.Title.Contains(title)).ToList();
+            
+            posts.AddRange(db.Posts.Where(c =>
+                !(author == null || author.Trim() == string.Empty) && c.AuthorName.Equals(author)).ToList());
+
+            posts.AddRange(db.Posts.Where(c =>
+                !(content == null || content.Trim() == string.Empty) && c.Content.Contains(content)).ToList());
+
+            return View(posts.Distinct().ToList());
         }
     }
 }
