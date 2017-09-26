@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShauliProject.Models
@@ -31,6 +32,7 @@ namespace ShauliProject.Models
         [Required]
         [Display(Name = "Code")]
         public string Code { get; set; }
+
         public string ReturnUrl { get; set; }
 
         [Display(Name = "Remember this browser?")]
@@ -68,7 +70,6 @@ namespace ShauliProject.Models
         [Display(Name = "UserRoles")]
         public string UserRoles { get; set; }
 
-
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -88,6 +89,16 @@ namespace ShauliProject.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public char Gender { get; set; }
+
+        [Required]
+        [DataType((DataType.DateTime))]
+        public DateTime DateOfBirth { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -311,7 +311,6 @@ C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.OAuth.
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.dll
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.pdb
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\bin\ApplicationInsights.config
@@ -396,7 +395,11 @@ C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProje
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.Migrations.UserRole.resources
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address.resources
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address2.resources
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address3.resources
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address4.resources
+=======
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
+>>>>>>> FanClub is a IdentityUser

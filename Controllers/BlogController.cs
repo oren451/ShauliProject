@@ -1,33 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Microsoft.Ajax.Utilities;
+using System.Web.Security;
 using ShauliProject.Models;
 
 namespace ShauliProject.Controllers
 {
     public class BlogController : Controller
     {
-        private readonly BlogDbContext db = new BlogDbContext();
+        private readonly BlogDbContext _db = new BlogDbContext();
 
         public ActionResult Index()
         {
-            ViewBag.authorList = new SelectList(db.Posts.Select(x => x.AuthorName).Distinct().OrderBy(x => x)).Items;
-
-            return View(db.Posts.Include(c => c.Comments).ToList());
+            ViewBag.authorList = new SelectList(_db.Posts.Select(x => x.ApplicationUser.Name).Distinct().OrderBy(x => x)).Items;
+            return View(_db.Posts.Include(c => c.Comments).ToList());
         }
 
 
         [Authorize(Roles = "Admin")]
         public ActionResult Management()
         {
-            return View(db.Posts.ToList());
+            return View(_db.Posts.ToList());
         }
 
         // GET: Blog/Details/5
@@ -38,7 +35,7 @@ namespace ShauliProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Post post = db.Posts.Single(m => m.Id == id);
+            Post post = _db.Posts.Single(m => m.PostId == id);
 
             if (post == null)
             {
@@ -62,9 +59,10 @@ namespace ShauliProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.ApplicationUserId = Int32.Parse(Membership.GetUser().ProviderUserKey.ToString());
                 post.PublishDate = DateTime.Now;
-                db.Posts.Add(post);
-                db.SaveChanges();
+                _db.Posts.Add(post);
+                _db.SaveChanges();
                 return RedirectToAction("Management");
             }
 
@@ -78,7 +76,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Single(m => m.Id == id);
+            Post post = _db.Posts.Single(m => m.PostId == id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -96,8 +94,8 @@ namespace ShauliProject.Controllers
             if (ModelState.IsValid)
             {
                 post.PublishDate = DateTime.Now;
-                db.Posts.AddOrUpdate(post);
-                db.SaveChanges();
+                _db.Posts.AddOrUpdate(post);
+                _db.SaveChanges();
                 return RedirectToAction("Management");
             }
             return View(post);
@@ -109,11 +107,11 @@ namespace ShauliProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Comments.AddOrUpdate(comment);
-                db.SaveChanges();
+                _db.Comments.AddOrUpdate(comment);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post", comment.PostId);
+            ViewData["PostId"] = new SelectList(_db.Posts, "PostId", "Post", comment.PostId);
             return View(comment);
         }
 
@@ -124,7 +122,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = db.Posts.Single(p => p.Id == id);
+            Post post = _db.Posts.Single(p => p.PostId == id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -137,9 +135,9 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Post post = db.Posts.Single(m => m.Id == id);
-            db.Posts.Remove(post);
-            db.SaveChanges();
+            Post post = _db.Posts.Single(m => m.PostId == id);
+            _db.Posts.Remove(post);
+            _db.SaveChanges();
             return RedirectToAction("Management");
         }
 
@@ -147,14 +145,14 @@ namespace ShauliProject.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }
 
         public ActionResult AddComment()
         {
-            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post");
+            ViewData["PostId"] = new SelectList(_db.Posts, "PostId", "Post");
             return RedirectToAction("Index");
         }
 
@@ -163,11 +161,11 @@ namespace ShauliProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Comments.Add(comment);
-                db.SaveChanges();
+                _db.Comments.Add(comment);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post", comment.PostId);
+            ViewData["PostId"] = new SelectList(_db.Posts, "PostId", "Post", comment.PostId);
             return RedirectToAction("Index");
         }
 
@@ -179,7 +177,7 @@ namespace ShauliProject.Controllers
                 return HttpNotFound();
             }
 
-            Comment comment = db.Comments.Single(m => m.CommentId == id);
+            Comment comment = _db.Comments.Single(m => m.CommentId == id);
             if (comment == null)
             {
                 return HttpNotFound();
@@ -193,10 +191,10 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteCommentConfirmed(int id)
         {
-            Comment comment = db.Comments.Single(m => m.CommentId == id);
+            Comment comment = _db.Comments.Single(m => m.CommentId == id);
             int temp = comment.PostId;
-            db.Comments.Remove(comment);
-            db.SaveChanges();
+            _db.Comments.Remove(comment);
+            _db.SaveChanges();
             return RedirectToAction("CommentDetails", new {id = temp});
         }
 
@@ -207,9 +205,9 @@ namespace ShauliProject.Controllers
                 return HttpNotFound();
             }
 
+            var comments = _db.Comments.Where(m => m.PostId == id).ToList();
 
-            var comments = db.Comments.Where(m => m.PostId == id).ToList();
-            if (comments == null)
+            if (comments.Count == 0)
             {
                 return HttpNotFound();
             }
@@ -219,13 +217,13 @@ namespace ShauliProject.Controllers
 
         public ActionResult Search(string title, string author, string content)
         {
-            List<Post> posts = db.Posts.Where(c =>
+            List<Post> posts = _db.Posts.Where(c =>
                 !(title == null || title.Trim() == string.Empty) && c.Title.Contains(title)).ToList();
             
-            posts.AddRange(db.Posts.Where(c =>
-                !(author == null || author.Trim() == string.Empty) && c.AuthorName.Equals(author)).ToList());
+            posts.AddRange(_db.Posts.Where(c =>
+                !(author == null || author.Trim() == string.Empty) && c.ApplicationUser.Name.Equals(author)).ToList());
 
-            posts.AddRange(db.Posts.Where(c =>
+            posts.AddRange(_db.Posts.Where(c =>
                 !(content == null || content.Trim() == string.Empty) && c.Content.Contains(content)).ToList());
 
             return View(posts.Distinct().ToList());
