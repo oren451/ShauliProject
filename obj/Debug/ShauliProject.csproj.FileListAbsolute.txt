@@ -396,3 +396,7 @@ C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProje
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.Migrations.UserRole.resources
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
+C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address.resources
+C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address2.resources
+C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address3.resources
+C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address4.resources

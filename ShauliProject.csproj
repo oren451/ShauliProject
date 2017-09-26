@@ -225,6 +225,22 @@
     <Compile Include="Migrations\201709221229403_UserRole.Designer.cs">
       <DependentUpon>201709221229403_UserRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709261418512_Address.cs" />
+    <Compile Include="Migrations\201709261418512_Address.Designer.cs">
+      <DependentUpon>201709261418512_Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261429066_Address2.cs" />
+    <Compile Include="Migrations\201709261429066_Address2.Designer.cs">
+      <DependentUpon>201709261429066_Address2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261442392_Address3.cs" />
+    <Compile Include="Migrations\201709261442392_Address3.Designer.cs">
+      <DependentUpon>201709261442392_Address3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261446062_Address4.cs" />
+    <Compile Include="Migrations\201709261446062_Address4.Designer.cs">
+      <DependentUpon>201709261446062_Address4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BlogDbContext.cs" />
@@ -346,6 +362,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201709221229403_UserRole.resx">
       <DependentUpon>201709221229403_UserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261418512_Address.resx">
+      <DependentUpon>201709261418512_Address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261429066_Address2.resx">
+      <DependentUpon>201709261429066_Address2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261442392_Address3.resx">
+      <DependentUpon>201709261442392_Address3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261446062_Address4.resx">
+      <DependentUpon>201709261446062_Address4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

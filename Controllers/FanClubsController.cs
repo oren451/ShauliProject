@@ -12,12 +12,12 @@ namespace ShauliProject.Controllers
 {
     public class FanClubsController : Controller
     {
-        private FanClubDbContext db = new FanClubDbContext();
+        private BlogDbContext db = new BlogDbContext();
 
         // GET: FanClubs
         public ActionResult Index()
         {
-            return View(db.FanClubs.ToList());
+            return View(db.Fan.ToList());
         }
 
         // GET: FanClubs/Details/5
@@ -27,7 +27,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FanClub fanClub = db.FanClubs.Find(id);
+            FanClub fanClub = db.Fan.Find(id);
             if (fanClub == null)
             {
                 return HttpNotFound();
@@ -46,11 +46,11 @@ namespace ShauliProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,DateOfBirth,Seniority")] FanClub fanClub)
+        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,DateOfBirth,Seniority,Address")] FanClub fanClub)
         {
             if (ModelState.IsValid)
             {
-                db.FanClubs.Add(fanClub);
+                db.Fan.Add(fanClub);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +65,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FanClub fanClub = db.FanClubs.Find(id);
+            FanClub fanClub = db.Fan.Find(id);
             if (fanClub == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace ShauliProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,DateOfBirth,Seniority")] FanClub fanClub)
+        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,DateOfBirth,Seniority,Address")] FanClub fanClub)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FanClub fanClub = db.FanClubs.Find(id);
+            FanClub fanClub = db.Fan.Find(id);
             if (fanClub == null)
             {
                 return HttpNotFound();
@@ -109,8 +109,8 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FanClub fanClub = db.FanClubs.Find(id);
-            db.FanClubs.Remove(fanClub);
+            FanClub fanClub = db.Fan.Find(id);
+            db.Fan.Remove(fanClub);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

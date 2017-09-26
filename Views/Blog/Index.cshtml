@@ -10,7 +10,16 @@
 @using (Html.BeginForm("Search", "Blog"))
 {
     @Html.AntiForgeryToken()
-<h3>Search post</h3>
+    <h3>Search post</h3>
+
+ 
+
+
+
+
+
+
+
     
     <p>
         <label>Title</label>
@@ -26,6 +35,8 @@
     <p>
         <label>Content</label>
         @Html.TextBox("content", "")
+        
+
     </p>
     <p>
         <input type="submit" value="Search"/>
@@ -45,24 +56,27 @@
                 </p>
             </header>
             <div>
-                <p>@Html.DisplayFor(Model => item.Content)</p>
-                <br/>
+                <p>
+                    @Html.DisplayFor(Model => item.Content)
+                  </p>
+                <br />
             </div>
             <div>
                 @if (item.Image != null)
                 {
-                    <img src="@Html.DisplayFor(Model => item.Image)" alt="picture"/>
+                    <img src="@Html.DisplayFor(Model => item.Image)" alt="picture" />
                 }
-                <br/>
+                <br />
                 @if (item.Video != null)
                 {
                     <video controls="controls">
-                        <source src="@Html.DisplayFor(Model => item.Video)" type="video/mp4"/>
+                        <source src="@Html.DisplayFor(Model => item.Video)" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 }
             </div>
         </article>
+
     </section>
     <div id="@Html.DisplayFor(Model => item.Id)">
         <section id="comments">
