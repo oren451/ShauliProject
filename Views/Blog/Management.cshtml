@@ -1,109 +1,47 @@
-﻿@model IEnumerable<ShauliProject.Models.Post>
-
+﻿@model IEnumerable<ShauliProject.Models.ApplicationUser>
 
 @{
-    ViewData["Title"] = "Management";
+    ViewBag.Title = "Management";
 }
 
+@foreach (var item in Model)
+{
+    foreach (var post in item.Posts)
+    {
+        <section id="post_section">
+            <h2>Manage Posts</h2>
+            <table class="table">
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("Title", post.Title)
+                    </td>
+                    <td>
+                        @Html.TextBox("Name", item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = post.PostId }) |
+                        @Html.ActionLink("Details", "Details", new { id = post.PostId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = post.PostId }) |
+                        @Html.ActionLink("Comments", "CommentDetails", new { id = post.PostId })
+                    </td>
+                </tr>
+                }
+                }
 
+            </table>
+        </section>
+    }
+}
+        <h3>
+            @Html.ActionLink("Add New Post", "Create")
+        </h3>
+    
 
-<header>
-    <h1>Management</h1>
-@*    <section class="projects current">*@
-@*        <h3>current</h3>*@
-@*        <ul data-bind="foreach: currentProjects">*@
-@*            <li class="table" data-bind="attr: { 'data-projectID': project_id }" data-projectid="10000">*@
-@*                <div class="essentials cell valign-mid">*@
-@*                    <div class="doughnut ui-doughnut ui-corner-all ui-widget-content" data-bind="attr: { 'data-task-total': tasks_total, 'data-tasks-complete': tasks_complete, 'data-status': status }" data-task-total="22" data-tasks-complete="17" data-status="danger" style="user-select: none; width: 100%; height: 20px; position: relative;">*@
-@*                        <div class="" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;">*@
-@*                            <canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; user-select: auto; width: 97px; height: 20px;"></canvas>*@
-@*                        </div>*@
-@*                    </div>*@
-@*                    <span data-bind="text: client_abbr" class="client abbr">PEPAUTO</span>*@
-@*                </div>*@
-@*                <div class="details cell valign-mid hidden-closed">*@
-@*                    <span data-bind="text: client_name" class="client full">Pepper Autobody Restoration</span>*@
-@*                    <span data-bind="text: formatProjecID" class="projectID"># 10000</span>*@
-@*                </div>*@
-@*                <div class="details-btn cell valign-mid hidden-closed">*@
-@*                    <i class="icon-sm icon-folder"></i>*@
-@*                </div>*@
-@*            </li>*@
-@**@
-@*            <li class="table active" data-bind="attr: { 'data-projectID': project_id }" data-projectid="10002">*@
-@*                <div class="essentials cell valign-mid">*@
-@*                    <div class="doughnut ui-doughnut ui-corner-all ui-widget-content" data-bind="attr: { 'data-task-total': tasks_total, 'data-tasks-complete': tasks_complete, 'data-status': status }" data-task-total="16" data-tasks-complete="12" data-status="warning" style="user-select: none; width: 100%; height: 20px; position: relative;">*@
-@*                        <div class="" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;">*@
-@*                            <canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; user-select: auto; width: 97px; height: 20px;"></canvas>*@
-@*                        </div>*@
-@*                    </div>*@
-@*                    <span data-bind="text: client_abbr" class="client abbr">MADARA</span>*@
-@*                </div>*@
-@*                <div class="details cell valign-mid hidden-closed">*@
-@*                    <span data-bind="text: client_name" class="client full">Madara Italian Bistro</span>*@
-@*                    <span data-bind="text: formatProjecID" class="projectID"># 10002</span>*@
-@*                </div>*@
-@*                <div class="details-btn cell valign-mid hidden-closed">*@
-@*                    <i class="icon-sm icon-folder"></i>*@
-@*                </div>*@
-@*            </li>*@
-@**@
-@*            <li class="table" data-bind="attr: { 'data-projectID': project_id }" data-projectid="10001">*@
-@*                <div class="essentials cell valign-mid">*@
-@*                    <div class="doughnut ui-doughnut ui-corner-all ui-widget-content" data-bind="attr: { 'data-task-total': tasks_total, 'data-tasks-complete': tasks_complete, 'data-status': status }" data-task-total="22" data-tasks-complete="3" data-status="ok" style="user-select: none; width: 100%; height: 20px; position: relative;">*@
-@*                        <div class="" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;">*@
-@*                            <canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; width: 97px; height: 20px;"></canvas><canvas width="97" height="20" style="position: absolute; top: 0px; left: 0px; user-select: auto; width: 97px; height: 20px;"></canvas>*@
-@*                        </div>*@
-@*                    </div>*@
-@*                    <span data-bind="text: client_abbr" class="client abbr">ZEEVILL</span>*@
-@*                </div>*@
-@*                <div class="details cell valign-mid hidden-closed">*@
-@*                    <span data-bind="text: client_name" class="client full">Zeevill Inc</span>*@
-@*                    <span data-bind="text: formatProjecID" class="projectID"># 10001</span>*@
-@*                </div>*@
-@*                <div class="details-btn cell valign-mid hidden-closed">*@
-@*                    <i class="icon-sm icon-folder"></i>*@
-@*                </div>*@
-@*            </li>*@
-@*        </ul>*@
-@*    </section>*@
-@*    <a>Posts</a>|<a onclick="loadManageUsers()">Users</a>*@
-</header>
-@*@RenderSection("post_section", required: false)*@
-
-<section id="post_section">
-    <h2>Manage Posts</h2>
-
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AuthorName)
-            </th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AuthorName)
-                </td>
-                <td>
-                    <a href="/Blog/Edit/@Html.DisplayFor(Model => item.Id)">Edit</a> |
-                    <a href="/Blog/Details/@Html.DisplayFor(Model => item.Id)">Details</a> |
-                    <a href="/Blog/Delete/@Html.DisplayFor(Model => item.Id)">Delete</a> |
-                    <a href="/Blog/CommentDetails/@Html.DisplayFor(Model => item.Id)">Comments</a>
-                </td>
-            </tr>
-        }
-
-    </table>
-    <h3>
-        <a href="@Url.Action("Create", "Blog")">Add New Post</a>
-    </h3>
-</section>

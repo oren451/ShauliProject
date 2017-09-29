@@ -1,4 +1,5 @@
-﻿@model System.Collections.Generic.List<ShauliProject.Models.Post>
+﻿@model IEnumerable<ShauliProject.Models.Post>
+@using ShauliProject.Controllers
 
 @{
     ViewBag.Title = "Search results";
@@ -8,35 +9,36 @@
 
 @foreach (var item in Model)
 {
+    string name = (from u in BlogController.getDbContext().Users where u.Id.Equals(item.UserId) select u.Name).Single();
     <section>
         <article class="blogPost">
             <header>
                 <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
                 <p>
-                    Posted on <time datetime="2009-06-29T23:31+01:00">@Html.DisplayFor(modelItem => item.PublishDate)</time> by <a href="#">@Html.DisplayFor(modelItem => item.AuthorName)</a> - <a href="#comments">@Html.DisplayFor(modelItem => item.Comments.Count) comments</a>
+                    Posted on <time datetime="2009-06-29T23:31+01:00">@Html.DisplayFor(modelItem => item.PublishDate)</time> by @Html.Raw(name) - <a href="#comments">@Html.DisplayFor(modelItem => item.Comments.Count) comments</a>
                 </p>
             </header>
             <div>
-                <p>@Html.DisplayFor(Model => item.Content)</p>
-                <br/>
+                <p>@Html.DisplayFor(model => item.Content)</p>
+                <br />
             </div>
             <div>
                 @if (item.Image != null)
                 {
-                    <img src="@Html.DisplayFor(Model => item.Image)" alt="picture"/>
+                    <img src="@Html.DisplayFor(model => item.Image)" alt="picture" />
                 }
-                <br/>
+                <br />
                 @if (item.Video != null)
                 {
                     <video controls="controls">
-                        <source src="@Html.DisplayFor(Model => item.Video)" type="video/mp4"/>
+                        <source src="@Html.DisplayFor(model => item.Video)" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 }
             </div>
         </article>
     </section>
-    <div id="@Html.DisplayFor(Model => item.Id)">
+    <div id="@Html.DisplayFor(model => item.PostId)">
         <section id="comments">
             <h3>Comments</h3>
             <article>
@@ -44,9 +46,9 @@
                 {
                     <article>
                         <header>
-                            @Html.DisplayFor(Model => comment.CommentWriter)
+                            @Html.DisplayFor(model => comment.CommentWriter)
                         </header>
-                        <p>@Html.DisplayFor(Model => comment.Content)</p>
+                        <p>@Html.DisplayFor(model => comment.Content)</p>
                     </article>
                 }
             </article>

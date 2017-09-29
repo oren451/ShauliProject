@@ -131,29 +131,16 @@
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
-    </Reference>
-    <Reference Include="System.Net.Http.WebRequest">
     </Reference>
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -218,34 +205,18 @@
     <Compile Include="Controllers\FanClubsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Migrations\201709291352002_init.cs" />
+    <Compile Include="Migrations\201709291352002_init.Designer.cs">
+      <DependentUpon>201709291352002_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\PostUserViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709221229403_UserRole.cs" />
-    <Compile Include="Migrations\201709221229403_UserRole.Designer.cs">
-      <DependentUpon>201709221229403_UserRole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261418512_Address.cs" />
-    <Compile Include="Migrations\201709261418512_Address.Designer.cs">
-      <DependentUpon>201709261418512_Address.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261429066_Address2.cs" />
-    <Compile Include="Migrations\201709261429066_Address2.Designer.cs">
-      <DependentUpon>201709261429066_Address2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261442392_Address3.cs" />
-    <Compile Include="Migrations\201709261442392_Address3.Designer.cs">
-      <DependentUpon>201709261442392_Address3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261446062_Address4.cs" />
-    <Compile Include="Migrations\201709261446062_Address4.Designer.cs">
-      <DependentUpon>201709261446062_Address4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BlogDbContext.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\FanClub.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Post.cs" />
@@ -345,11 +316,11 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
-    <Content Include="Views\Blog\Management.cshtml" />
     <Content Include="Views\Blog\CommentDetails.cshtml" />
     <Content Include="Views\Blog\DeleteComment.cshtml" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
+    <Content Include="Views\Blog\Management.cshtml" />
     <Content Include="Views\Blog\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -360,20 +331,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709221229403_UserRole.resx">
-      <DependentUpon>201709221229403_UserRole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261418512_Address.resx">
-      <DependentUpon>201709261418512_Address.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261429066_Address2.resx">
-      <DependentUpon>201709261429066_Address2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261442392_Address3.resx">
-      <DependentUpon>201709261442392_Address3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261446062_Address4.resx">
-      <DependentUpon>201709261446062_Address4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709291352002_init.resx">
+      <DependentUpon>201709291352002_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

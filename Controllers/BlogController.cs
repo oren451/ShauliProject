@@ -12,19 +12,23 @@ namespace ShauliProject.Controllers
 {
     public class BlogController : Controller
     {
-        private readonly BlogDbContext _db = new BlogDbContext();
+        public static ApplicationDbContext getDbContext()
+        {
+            return new ApplicationDbContext();
+        }
 
         public ActionResult Index()
         {
-            ViewBag.authorList = new SelectList(_db.Posts.Select(x => x.ApplicationUser.Name).Distinct().OrderBy(x => x)).Items;
-            return View(_db.Posts.Include(c => c.Comments).ToList());
+            ApplicationDbContext db = getDbContext();
+            ViewBag.authorList = new SelectList(db.Users.Select(x => x.Name).Distinct().OrderBy(x => x)).Items;
+            List<ApplicationUser> list = (db.Users.Include(m => m.Posts)).ToList();
+            return View(list);
         }
-
 
         [Authorize(Roles = "Admin")]
         public ActionResult Management()
         {
-            return View(_db.Posts.ToList());
+            return View(getDbContext().Users.Include(m => m.Posts).ToList());
         }
 
         // GET: Blog/Details/5
@@ -35,7 +39,8 @@ namespace ShauliProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Post post = _db.Posts.Single(m => m.PostId == id);
+            Post post = getDbContext().Posts.Single(m => m.PostId == id);
+            ViewBag.name = getDbContext().Users.Where(i => i.Id.Equals(id)).Select(i => new {i.Name});
 
             if (post == null)
             {
@@ -47,22 +52,23 @@ namespace ShauliProject.Controllers
         // GET: Blog/Create
         public ActionResult Create()
         {
+            string key = HttpContext.User.Identity.Name;
+            ViewBag.name = getDbContext().Users.Where(i => i.UserName.Equals(key)).Select(i => new { i.Name });
             return View();
         }
 
-        // POST: Blog/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Post post)
         {
             if (ModelState.IsValid)
             {
-                post.ApplicationUserId = Int32.Parse(Membership.GetUser().ProviderUserKey.ToString());
+                ApplicationDbContext db = getDbContext();
+                string currentUserName = HttpContext.User.Identity.Name;
+                post.UserId = (from i in db.Users where i.UserName.Equals(currentUserName) select i.Id).Single();
                 post.PublishDate = DateTime.Now;
-                _db.Posts.Add(post);
-                _db.SaveChanges();
+                db.Posts.Add(post);
+                db.SaveChanges();
                 return RedirectToAction("Management");
             }
 
@@ -76,7 +82,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = _db.Posts.Single(m => m.PostId == id);
+            Post post = getDbContext().Posts.Single(m => m.PostId == id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -93,9 +99,10 @@ namespace ShauliProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                ApplicationDbContext db = getDbContext();
                 post.PublishDate = DateTime.Now;
-                _db.Posts.AddOrUpdate(post);
-                _db.SaveChanges();
+                db.Posts.AddOrUpdate(post);
+                db.SaveChanges();
                 return RedirectToAction("Management");
             }
             return View(post);
@@ -105,13 +112,15 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditComment(Comment comment)
         {
+            ApplicationDbContext db = getDbContext();
+
             if (ModelState.IsValid)
             {
-                _db.Comments.AddOrUpdate(comment);
-                _db.SaveChanges();
+                db.Comments.AddOrUpdate(comment);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["PostId"] = new SelectList(_db.Posts, "PostId", "Post", comment.PostId);
+            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post", comment.PostId);
             return View(comment);
         }
 
@@ -122,7 +131,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Post post = _db.Posts.Single(p => p.PostId == id);
+            Post post = getDbContext().Posts.Single(p => p.PostId == id);
             if (post == null)
             {
                 return HttpNotFound();
@@ -135,9 +144,10 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Post post = _db.Posts.Single(m => m.PostId == id);
-            _db.Posts.Remove(post);
-            _db.SaveChanges();
+            ApplicationDbContext db = getDbContext();
+            Post post = db.Posts.Single(m => m.PostId == id);
+            db.Posts.Remove(post);
+            db.SaveChanges();
             return RedirectToAction("Management");
         }
 
@@ -145,27 +155,28 @@ namespace ShauliProject.Controllers
         {
             if (disposing)
             {
-                _db.Dispose();
+                getDbContext().Dispose();
             }
             base.Dispose(disposing);
         }
 
         public ActionResult AddComment()
         {
-            ViewData["PostId"] = new SelectList(_db.Posts, "PostId", "Post");
+            ViewData["PostId"] = new SelectList(getDbContext().Posts, "PostId", "Post");
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         public ActionResult AddComment(Comment comment)
         {
+            ApplicationDbContext db = getDbContext();
             if (ModelState.IsValid)
             {
-                _db.Comments.Add(comment);
-                _db.SaveChanges();
+                db.Comments.Add(comment);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewData["PostId"] = new SelectList(_db.Posts, "PostId", "Post", comment.PostId);
+            ViewData["PostId"] = new SelectList(db.Posts, "PostId", "Post", comment.PostId);
             return RedirectToAction("Index");
         }
 
@@ -177,7 +188,7 @@ namespace ShauliProject.Controllers
                 return HttpNotFound();
             }
 
-            Comment comment = _db.Comments.Single(m => m.CommentId == id);
+            Comment comment = getDbContext().Comments.Single(m => m.CommentId == id);
             if (comment == null)
             {
                 return HttpNotFound();
@@ -191,10 +202,11 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteCommentConfirmed(int id)
         {
-            Comment comment = _db.Comments.Single(m => m.CommentId == id);
+            ApplicationDbContext db = getDbContext();
+            Comment comment = db.Comments.Single(m => m.CommentId == id);
             int temp = comment.PostId;
-            _db.Comments.Remove(comment);
-            _db.SaveChanges();
+            db.Comments.Remove(comment);
+            db.SaveChanges();
             return RedirectToAction("CommentDetails", new {id = temp});
         }
 
@@ -205,7 +217,7 @@ namespace ShauliProject.Controllers
                 return HttpNotFound();
             }
 
-            var comments = _db.Comments.Where(m => m.PostId == id).ToList();
+            var comments = getDbContext().Comments.Where(m => m.PostId == id).ToList();
 
             if (comments.Count == 0)
             {
@@ -217,16 +229,33 @@ namespace ShauliProject.Controllers
 
         public ActionResult Search(string title, string author, string content)
         {
-            List<Post> posts = _db.Posts.Where(c =>
+            ApplicationDbContext db = getDbContext();
+            List<Post> posts = db.Posts.Where(c =>
                 !(title == null || title.Trim() == string.Empty) && c.Title.Contains(title)).ToList();
             
-            posts.AddRange(_db.Posts.Where(c =>
-                !(author == null || author.Trim() == string.Empty) && c.ApplicationUser.Name.Equals(author)).ToList());
+            if (author == null || author.Trim() == string.Empty)
+            {
+                posts.AddRange(from p in db.Posts
+                    join u in db.Users on p.UserId equals u.Id
+                               where u.Name.Equals(author)
+                                select p);
+            }
 
-            posts.AddRange(_db.Posts.Where(c =>
+            posts.AddRange(db.Posts.Where(c =>
                 !(content == null || content.Trim() == string.Empty) && c.Content.Contains(content)).ToList());
 
-            return View(posts.Distinct().ToList());
+            List<Post> list = posts.Distinct().ToList();
+            List<ApplicationUser> users = new List<ApplicationUser>(); 
+
+            foreach(Post p in list)
+            {
+                if (!users.Exists(i => i.Id.Equals(p.UserId)))
+                {
+                    users.Add(db.Users.Where(i => i.Id.Equals(p.UserId)).Single());
+                }
+           }
+
+            return View(list);
         }
     }
 }

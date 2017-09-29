@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ShauliProject.Models
 {
@@ -7,8 +9,7 @@ namespace ShauliProject.Models
     {
         public int PostId { get; set; }
         public string Title { get; set; }
-        public int ApplicationUserId { get; set; }
-        public virtual ApplicationUser ApplicationUser { get; set; }
+        public string UserId { get; set; }
         public string AuthorSite { get; set; }
         public DateTime PublishDate { get; set; }
         public string Content { get; set; }

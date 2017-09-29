@@ -1,3 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=BLOG_005CDELETECOMMENT/@EntryIndexedValue">Blog\DeleteComment</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/MappedPaths/=BLOG_005CCOMMENTDETAILS/@EntryIndexedValue"></s:String>
-	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=BLOG_005CCOMMENTDETAILS/@EntryIndexedValue">Blog\CommentDetails</s:String></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=BLOG_005CCOMMENTDETAILS/@EntryIndexedValue">Blog\CommentDetails</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=BLOG_005CDELETECOMMENT/@EntryIndexedValue">Blog\DeleteComment</s:String></wpf:ResourceDictionary>

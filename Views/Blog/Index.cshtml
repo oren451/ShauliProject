@@ -1,6 +1,5 @@
 ﻿@using ShauliProject.Controllers
-@using ShauliProject.Models
-@model IEnumerable<ShauliProject.Models.Post>
+@model IEnumerable<ShauliProject.Models.ApplicationUser>
 
 @{
     ViewBag.Title = "Index";
@@ -22,31 +21,23 @@
     @Html.AntiForgeryToken()
     <h3>Search post</h3>
 
- 
-
-
-
-
-
-
-
-    
     <p>
         <label>Title</label>
         @Html.TextBox("title", "")
     </p>
     <p>
+        
         <label>Author Name</label>
-        @Html.DropDownList("author", 
-        new SelectList(ViewBag.authorList),
-        "Select Author:",
-        new { @class = "form-control" } )
+        @Html.DropDownList("author",
+            new SelectList(ViewBag.authorList),
+            "Select Author:",
+            new { @class = "form-control" })
+
+
     </p>
     <p>
         <label>Content</label>
         @Html.TextBox("content", "")
-        
-
     </p>
 
     <p>
@@ -58,31 +49,38 @@
 
 @foreach (var item in Model)
 {
+    foreach (var post in item.Posts)
+    {
+        
     <section>
 
         <article class="blogPost">
             <header>
-                <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                <h2>@Html.DisplayFor(modelItem => post.Title)</h2>
                 <p>
-                    Posted on <time datetime="2009-06-29T23:31+01:00">@Html.DisplayFor(modelItem => item.PublishDate)</time> by <a href="#">@Html.DisplayFor(modelItem => item.AuthorName)</a> - <a href="#comments">@Html.DisplayFor(modelItem => item.Comments.Count) comments</a>
+                    Posted on <time datetime="2009-06-29T23:31+01:00">
+                    @Html.DisplayFor(modelItem => post.PublishDate)</time>
+                     by @Html.DisplayFor(modelItem => item.Name) - <a href="#comments">@Html.DisplayFor(modelItem => post.Comments.Count) comments</a>
                 </p>
             </header>
             <div>
                 <p>
-                    @Html.DisplayFor(Model => item.Content)
-                </p>
-                <br/>
+
+                    @Html.DisplayFor(model => post.Content)
+                  </p>
+                <br />
             </div>
             <div>
-                @if (item.Image != null)
+                @if (post.Image != null)
                 {
-                    <img src="@Html.DisplayFor(Model => item.Image)" alt="picture"/>
+
+                    <img src="@Html.DisplayFor(model => post.Image)" alt="picture" />
                 }
-                <br/>
-                @if (item.Video != null)
+                <br />
+                @if (post.Video != null)
                 {
                     <video controls="controls">
-                        <source src="@Html.DisplayFor(Model => item.Video)" type="video/mp4"/>
+                        <source src="@Html.DisplayFor(model => post.Video)" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 }
@@ -90,27 +88,27 @@
         </article>
 
     </section>
-    <div id="@Html.DisplayFor(Model => item.Id)">
+    <div id="@Html.DisplayFor(model => post.PostId)">
         <section id="comments">
             <h3>Comments</h3>
             <article>
-                @foreach (var comment in item.Comments)
+                @foreach (var comment in post.Comments)
                 {
                     <article>
                         <header>
-                            @Html.DisplayFor(Model => comment.CommentWriter)
+                            @Html.DisplayFor(model => comment.CommentWriter)
                         </header>
-                        <p>@Html.DisplayFor(Model => comment.Content)</p>
+                        <p>@Html.DisplayFor(model => comment.Content)</p>
                     </article>
                 }
             </article>
         </section>
     </div>
-    using (Html.BeginForm("AddComment", "Blog"))
-    {
+        using (Html.BeginForm("AddComment", "Blog"))
+        {
         @Html.AntiForgeryToken()
         <h3>Post a comment</h3>
-        @Html.Hidden("PostId", item.Id)
+        @Html.Hidden("PostId", post.PostId)
         <p>
             <label for="Name">Name</label>
             @Html.TextBox("CommentWriter")
@@ -130,6 +128,7 @@
         <p>
             <input type="submit" value="Post comment"/>
         </p>
+        }
     }
     <div class="fb-comments" data-href="@FB" data-numposts="5"></div>
 

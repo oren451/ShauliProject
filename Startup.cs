@@ -30,7 +30,6 @@ namespace ShauliProject
             // In Startup iam creating first Admin Role and creating a default Admin User    
             if (!roleManager.RoleExists("Admin"))
             {
-
                 // first we create Admin rool   
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
                 role.Name = "Admin";

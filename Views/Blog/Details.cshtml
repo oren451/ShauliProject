@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Details of the post of @Html.Raw(ViewBag.name)</h2>
 
 <div>
     <h4>Post</h4>
@@ -17,15 +17,6 @@
         <dd>
             @Html.DisplayFor(model => model.Title)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AuthorName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AuthorName)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.AuthorSite)
         </dt>
@@ -69,6 +60,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PostId }) |
     @Html.ActionLink("Back to List", "Management")
 </p>

@@ -1,4 +1,4 @@
-﻿@model ShauliProject.Models.FanClub
+﻿@model ShauliProject.Models.ApplicationUser
 
 @{
     ViewBag.Title = "Delete";
@@ -6,28 +6,20 @@
 
 <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Are you sure you want to delete this fan from the fan club?</h3>
 <div>
     <h4>FanClub</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
+       <dt>
             @Html.DisplayNameFor(model => model.DateOfBirth)
         </dt>
 
@@ -56,7 +48,7 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
+        <div>
             <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>

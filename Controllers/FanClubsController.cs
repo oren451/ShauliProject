@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using ShauliProject.Models;
 
 namespace ShauliProject.Controllers
 {
     public class FanClubsController : Controller
     {
-        private BlogDbContext db = new BlogDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: FanClubs
         public ActionResult Index()
         {
-            return View(db.Fan.ToList());
+            return View(_db.Users.Where(m => m.Address == null).ToList());
         }
 
         // GET: FanClubs/Details/5
@@ -27,11 +24,14 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FanClub fanClub = db.Fan.Find(id);
+
+            ApplicationUser fanClub = _db.Users.Find(id);
+
             if (fanClub == null)
             {
                 return HttpNotFound();
             }
+
             return View(fanClub);
         }
 
@@ -46,16 +46,21 @@ namespace ShauliProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FirstName,LastName,DateOfBirth,Seniority,Address")] FanClub fanClub)
+        public ActionResult Create(string dateOfBirth, int seniority, string address)
         {
             if (ModelState.IsValid)
             {
-                db.Fan.Add(fanClub);
-                db.SaveChanges();
+                ApplicationUser user = new ApplicationUser();
+                user = _db.Users.Find(Membership.GetUser().ProviderUserKey);
+                user.DateOfBirth = dateOfBirth;
+                user.Seniority = seniority;
+                user.Address = address;
+                _db.Entry(user).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(fanClub);
+            return View();
         }
 
         // GET: FanClubs/Edit/5
@@ -65,7 +70,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FanClub fanClub = db.Fan.Find(id);
+            ApplicationUser fanClub = _db.Users.Find(id);
             if (fanClub == null)
             {
                 return HttpNotFound();
@@ -78,15 +83,20 @@ namespace ShauliProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FirstName,LastName,DateOfBirth,Seniority,Address")] FanClub fanClub)
+        public ActionResult Edit(string dateOfBirth, int seniority, string address)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(fanClub).State = EntityState.Modified;
-                db.SaveChanges();
+                ApplicationUser user = new ApplicationUser();
+                user = _db.Users.Find(Membership.GetUser().ProviderUserKey);
+                user.DateOfBirth = dateOfBirth;
+                user.Seniority = seniority;
+                user.Address = address;
+                _db.Entry(user).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(fanClub);
+            return View();
         }
 
         // GET: FanClubs/Delete/5
@@ -96,7 +106,7 @@ namespace ShauliProject.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FanClub fanClub = db.Fan.Find(id);
+            ApplicationUser fanClub = _db.Users.Find(id);
             if (fanClub == null)
             {
                 return HttpNotFound();
@@ -109,9 +119,12 @@ namespace ShauliProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            FanClub fanClub = db.Fan.Find(id);
-            db.Fan.Remove(fanClub);
-            db.SaveChanges();
+            ApplicationUser user = _db.Users.Find(id);
+            user.DateOfBirth = null;
+            user.Seniority = 0;
+            user.Address = null;
+            _db.Entry(user).State = EntityState.Modified;
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -119,7 +132,7 @@ namespace ShauliProject.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

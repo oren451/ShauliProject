@@ -14,14 +14,9 @@ namespace ShauliProject.Models
     {
         [Required]
         public string Name { get; set; }
-
-        [Required]
-        public char Gender { get; set; }
-
-        [Required]
-        [DataType((DataType.DateTime))]
-        public DateTime DateOfBirth { get; set; }
-
+        public string DateOfBirth { get; set; }
+        public int Seniority { get; set; }
+        public string Address { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -31,20 +26,5 @@ namespace ShauliProject.Models
             // Add custom user claims here
             return userIdentity;
         }
-    }
-
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
-
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
-
-        public DbSet<Post> Posts { get; set; }
     }
 }
