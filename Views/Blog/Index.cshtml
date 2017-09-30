@@ -1,5 +1,5 @@
 ﻿@using ShauliProject.Controllers
-@model IEnumerable<ShauliProject.Models.ApplicationUser>
+@model IEnumerable<ShauliProject.Models.PostUserViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -49,38 +49,34 @@
 
 @foreach (var item in Model)
 {
-    foreach (var post in item.Posts)
-    {
-        
     <section>
-
         <article class="blogPost">
             <header>
-                <h2>@Html.DisplayFor(modelItem => post.Title)</h2>
+                <h2>@Html.DisplayFor(modelItem => item.post.Title)</h2>
                 <p>
                     Posted on <time datetime="2009-06-29T23:31+01:00">
-                    @Html.DisplayFor(modelItem => post.PublishDate)</time>
-                     by @Html.DisplayFor(modelItem => item.Name) - <a href="#comments">@Html.DisplayFor(modelItem => post.Comments.Count) comments</a>
+                    @Html.DisplayFor(modelItem => item.post.PublishDate)</time>
+                     by @Html.DisplayFor(modelItem => item.user.Name) - <a href="#comments">@Html.DisplayFor(modelItem => item.post.Comments.Count) comments</a>
                 </p>
             </header>
             <div>
                 <p>
 
-                    @Html.DisplayFor(model => post.Content)
+                    @Html.DisplayFor(model => item.post.Content)
                   </p>
                 <br />
             </div>
             <div>
-                @if (post.Image != null)
+                @if (item.post.Image != null)
                 {
 
-                    <img src="@Html.DisplayFor(model => post.Image)" alt="picture" />
+                    <img src="@Html.DisplayFor(model => item.post.Image)" alt="picture" />
                 }
                 <br />
-                @if (post.Video != null)
+                @if (item.post.Video != null)
                 {
                     <video controls="controls">
-                        <source src="@Html.DisplayFor(model => post.Video)" type="video/mp4" />
+                        <source src="@Html.DisplayFor(model => item.post.Video)" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 }
@@ -88,11 +84,11 @@
         </article>
 
     </section>
-    <div id="@Html.DisplayFor(model => post.PostId)">
+    <div id="@Html.DisplayFor(model => item.post.PostId)">
         <section id="comments">
             <h3>Comments</h3>
             <article>
-                @foreach (var comment in post.Comments)
+                @foreach (var comment in item.post.Comments)
                 {
                     <article>
                         <header>
@@ -108,7 +104,7 @@
         {
         @Html.AntiForgeryToken()
         <h3>Post a comment</h3>
-        @Html.Hidden("PostId", post.PostId)
+        @Html.Hidden("PostId", item.post.PostId)
         <p>
             <label for="Name">Name</label>
             @Html.TextBox("CommentWriter")

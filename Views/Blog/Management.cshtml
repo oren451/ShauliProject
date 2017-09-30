@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ShauliProject.Models.ApplicationUser>
+﻿@model IEnumerable<ShauliProject.Models.PostUserViewModel>
 
 @{
     ViewBag.Title = "Management";
@@ -6,9 +6,7 @@
 
 @foreach (var item in Model)
 {
-    foreach (var post in item.Posts)
-    {
-        <section id="post_section">
+    <section id="post_section">
             <h2>Manage Posts</h2>
             <table class="table">
                 <tr>
@@ -16,21 +14,21 @@
                         Title
                     </th>
                     <th>
-                        Title
+                        Name
                     </th>
                 </tr>
                 <tr>
                     <td>
-                        @Html.TextBox("Title", post.Title)
+                        @Html.TextBox("Title", item.post.Title)
                     </td>
                     <td>
-                        @Html.TextBox("Name", item.Name)
+                        @Html.TextBox("Name", item.user.Name)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = post.PostId }) |
-                        @Html.ActionLink("Details", "Details", new { id = post.PostId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = post.PostId }) |
-                        @Html.ActionLink("Comments", "CommentDetails", new { id = post.PostId })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.post.PostId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.post.PostId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.post.PostId }) |
+                        @Html.ActionLink("Comments", "CommentDetails", new { id = item.post.PostId })
                     </td>
                 </tr>
                 }

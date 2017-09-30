@@ -21,14 +21,22 @@ namespace ShauliProject.Controllers
         {
             ApplicationDbContext db = getDbContext();
             ViewBag.authorList = new SelectList(db.Users.Select(x => x.Name).Distinct().OrderBy(x => x)).Items;
-            List<ApplicationUser> list = (db.Users.Include(m => m.Posts)).ToList();
+
+            List<PostUserViewModel> list = (from u in db.Users join p in db.Posts
+                                           on u.Id equals p.UserId
+                                           select new PostUserViewModel { post = p, user = u}).ToList();
             return View(list);
         }
 
         [Authorize(Roles = "Admin")]
         public ActionResult Management()
         {
-            return View(getDbContext().Users.Include(m => m.Posts).ToList());
+            ApplicationDbContext db = getDbContext();
+            List<PostUserViewModel> list = (from u in db.Users
+                                            join p in db.Posts
+                                            on u.Id equals p.UserId
+                                            select new PostUserViewModel { post = p, user = u }).ToList();
+            return View(list);
         }
 
         // GET: Blog/Details/5

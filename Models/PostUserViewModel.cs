@@ -5,7 +5,7 @@ namespace ShauliProject.Models
 {
     public class PostUserViewModel
     {
-        public List<Post> postlist { get; set; }
-        public List<ApplicationUser> userlist { get; set; }
+        public Post post { get; set; }
+        public ApplicationUser user { get; set; }
     }
 }
