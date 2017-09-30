@@ -48,7 +48,7 @@ namespace ShauliProject.Controllers
             }
 
             Post post = getDbContext().Posts.Single(m => m.PostId == id);
-            ViewBag.name = getDbContext().Users.Where(i => i.Id.Equals(id)).Select(i => new {i.Name});
+            ViewBag.name = getDbContext().Users.Where(i => i.Id.Equals(id)).Select(i => new {i.Name}).Single();
 
             if (post == null)
             {
@@ -77,6 +77,7 @@ namespace ShauliProject.Controllers
                 post.PublishDate = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
+                System.Threading.Thread.Sleep(2000);
                 return RedirectToAction("Management");
             }
 
@@ -240,30 +241,31 @@ namespace ShauliProject.Controllers
             ApplicationDbContext db = getDbContext();
             List<Post> posts = db.Posts.Where(c =>
                 !(title == null || title.Trim() == string.Empty) && c.Title.Contains(title)).ToList();
-            
+
             if (author == null || author.Trim() == string.Empty)
             {
                 posts.AddRange(from p in db.Posts
                     join u in db.Users on p.UserId equals u.Id
-                               where u.Name.Equals(author)
-                                select p);
+                    where u.Name.Equals(author)
+                    select p);
             }
 
             posts.AddRange(db.Posts.Where(c =>
                 !(content == null || content.Trim() == string.Empty) && c.Content.Contains(content)).ToList());
 
             List<Post> list = posts.Distinct().ToList();
-            List<ApplicationUser> users = new List<ApplicationUser>(); 
+            List<ApplicationUser> users = new List<ApplicationUser>();
 
-            foreach(Post p in list)
+            foreach (Post p in list)
             {
                 if (!users.Exists(i => i.Id.Equals(p.UserId)))
                 {
                     users.Add(db.Users.Where(i => i.Id.Equals(p.UserId)).Single());
                 }
-           }
+            }
 
             return View(list);
+
         }
     }
 }

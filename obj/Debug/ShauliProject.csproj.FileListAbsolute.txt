@@ -400,3 +400,4 @@ C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.pdb
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.Migrations.init.resources
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
+C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.init.resources

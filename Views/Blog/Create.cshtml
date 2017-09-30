@@ -4,12 +4,15 @@
     ViewBag.Title = "Create Post for" + @Html.Raw(ViewBag.name);
 }
 
+
+
 <h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
+
     
     <div class="form-horizontal">
         <h4>Post</h4>
@@ -63,9 +66,19 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" id="myButton" value="Create" class="btn btn-default" />
             </div>
         </div>
+        
+
+        <div id="outerDiv">
+            <div id="innerDiv" >
+           
+        </div>
+    </div>
+       
+        
+
     </div>
 }
 
@@ -73,6 +86,64 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+
+
+
+
+
+
+
+
+
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function() {
+            $('input').focus(function () {
+                $(this).css('background', '#EBEBEB');
+            });
+            $('input').blur(function () {
+                $(this).css('background', 'white');
+            });
+
+            $('#myButton').hover(
+                function () {
+                    var $this = $(this);
+                    $this.data('prehovercolor', $this.css('background-color'))
+                        .css('background-color', 'yellow');
+                },
+                function () {
+                    var $this = $(this);
+                    $this.css('background-color', $this.data('prehovercolor'));
+                }
+            );
+
+
+        })
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myButton').click(function () {
+                animateProgressBar(100);
+            });
+
+            function animateProgressBar(percentageCompleted) {
+                $('#innerDiv').animate({
+                    'width': (500 * percentageCompleted) / 100
+                }, 2000);
+
+                $({ counter: 1 }).animate({ counter: percentageCompleted }, {
+                    duration: 2000,
+                    step: function () {
+                        $('#innerDiv').text(Math.ceil(this.counter) + ' %');
+                    }
+                })
+            }
+        });
+    </script>
+
+
 }
+

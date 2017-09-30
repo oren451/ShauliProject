@@ -8,13 +8,15 @@
 
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>(function (d, s, id)
+{
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=276751572729225";
     fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}
+(document, 'script', 'facebook-jssdk'));</script>
 
 @using (Html.BeginForm("Search", "Blog"))
 {
@@ -41,10 +43,16 @@
     </p>
 
     <p>
-        <input type="submit" value="Search"/>
+        <input type="submit" id="myButton" value="Search"/>
     </p>
-}
 
+
+}
+<div id="outerDiv">
+    <div id="innerDiv" >
+           
+    </div>
+</div>
 
 
 @foreach (var item in Model)
@@ -129,4 +137,48 @@
     <div class="fb-comments" data-href="@FB" data-numposts="5"></div>
 
 
+}
+@section Scripts{
+    <script>
+        $(document).ready(function() {
+            $('input').focus(function () {
+                $(this).css('background', '#EBEBEB');
+            });
+            $('input').blur(function () {
+                $(this).css('background', 'white');
+            });
+            $('#myButton').hover(
+                function () {
+                    var $this = $(this);
+                    $this.data('prehovercolor', $this.css('background-color'))
+                        .css('background-color', 'yellow');
+                },
+                function () {
+                    var $this = $(this);
+                    $this.css('background-color', $this.data('prehovercolor'));
+                }
+            );
+        })
+    </script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#myButton').click(function () {
+                animateProgressBar(100);
+            });
+
+            function animateProgressBar(percentageCompleted) {
+                $('#innerDiv').animate({
+                    'width': (500 * percentageCompleted) / 100
+                }, 2000);
+
+                $({ counter: 1 }).animate({ counter: percentageCompleted }, {
+                    duration: 2000,
+                    step: function () {
+                        $('#innerDiv').text(Math.ceil(this.counter) + ' %');
+                    }
+                })
+            }
+        });
+    </script>
 }
