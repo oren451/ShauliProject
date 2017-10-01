@@ -9,6 +9,8 @@
 </head>
 <body>
 
+
+
 <header>
     <a href="/Home/Index">
         <h1 class="headline">Ha-Blog Shel Shauli</h1> </a>
@@ -28,6 +30,7 @@
                     <li><a href="/FanClubs/Index">Fans Club</a></li>
                     <li><a href="/Home/Contact">Contact</a></li>
                     <li><a href="/Home/Videos">Videos</a></li>
+                    <li><a href="/Home/Charts">Charts</a></li>
                     <li><a href="#">Subscribe via. RSS</a></li>
                     <li>
                         <div id="transDemo2">
@@ -51,16 +54,16 @@
 
 <section id="intro">
     <!-- Introduction -->
-            <header>
-                <h2>Do you have questions for me?</h2>
-            </header>
- 
-        <p>Welcome to my blog.
-            The blog of Shauli or Shaul or Shauli or Shaul.
-            Feel free to ask what you want</p>
-  
-    
-            <img src="/Content/Images/intro_shauli.png" alt="Shauli"/>
+    <header>
+        <h2>Do you have questions for me?</h2>
+    </header>
+
+    <p>Welcome to my blog.
+        The blog of Shauli or Shaul or Shauli or Shaul.
+        Feel free to ask what you want</p>
+
+
+    <img src="/Content/Images/intro_shauli.png" alt="Shauli"/>
 </section>
 
 
@@ -71,43 +74,43 @@
         @RenderBody()
 
     </div>
-        <aside>
-            <section>
-                <header>
-                    <h3>Categories</h3>
-                </header>
-                <ul>
-                    <li>
-                        <a href="#">Sports</a>
-                    </li>
-                    <li>
-                        <a href="#">Politics</a>
-                    </li>
-                    <li>
-                        <a href="#">Health</a>
-                    </li>
-                </ul>
-            </section>
-            <section>
-                <header>
-                    <h3>Archives</h3>
-                </header>
-                <ul>
-                    <li>
-                        <a href="#">June 2017</a>
-                    </li>
-                    <li>
-                        <a href="#">July 2017</a>
-                    </li>
-                    <li>
-                        <a href="#">August 2017</a>
-                    </li>
-                    <li>
-                        <a href="#">September 2017</a>
-                    </li>
-                </ul>
-            </section>
-        </aside>
+    <aside>
+        <section>
+            <header>
+                <h3>Categories</h3>
+            </header>
+            <ul>
+                <li>
+                    <a href="#">Sports</a>
+                </li>
+                <li>
+                    <a href="#">Politics</a>
+                </li>
+                <li>
+                    <a href="#">Health</a>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <header>
+                <h3>Archives</h3>
+            </header>
+            <ul>
+                <li>
+                    <a href="#">June 2017</a>
+                </li>
+                <li>
+                    <a href="#">July 2017</a>
+                </li>
+                <li>
+                    <a href="#">August 2017</a>
+                </li>
+                <li>
+                    <a href="#">September 2017</a>
+                </li>
+            </ul>
+        </section>
+    </aside>
 </div>
 <div class="container body-content">
     <hr/>
@@ -159,17 +162,18 @@
 </div>
 
 @section Scripts {
-    
+
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
-            $("ul").hover(function () {
-                $(this).css("background-color", "yellow");
-            }, function () {
-                $(this).css("background-color", "pink");
-            });
+            $("ul").hover(function() {
+                    $(this).css("background-color", "yellow");
+                },
+                function() {
+                    $(this).css("background-color", "pink");
+                });
 
-  
+
         });
     </script>
 
