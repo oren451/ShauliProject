@@ -1,5 +1,4 @@
-﻿@using ShauliProject.Controllers
-@model IEnumerable<ShauliProject.Models.PostUserViewModel>
+﻿@model IEnumerable<ShauliProject.Models.PostUserViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -89,6 +88,7 @@
                     </video>
                 }
             </div>
+            <div class="fb-comments" data-href="@FB" data-numposts="5"></div>
         </article>
 
     </section>
@@ -114,31 +114,18 @@
         <h3>Post a comment</h3>
         @Html.Hidden("PostId", item.post.PostId)
         <p>
-            <label for="Name">Name</label>
-            @Html.TextBox("CommentWriter")
-        </p>
-        <p>
-            <label for="Website">Website</label>
-            @Html.TextBox("CommentWriterSite")
-        </p>
-        <p>
-            <label for="TitleComment">Title</label>
-            @Html.TextBox("Title", "")
-        </p>
-        <p>
             <label for="Comment">Comment</label>
-            @Html.TextBox("Content")
+            @Html.TextBox("Content", "")
         </p>
         <p>
             <input type="submit" value="Post comment"/>
         </p>
-        }
+        
     }
-    <div class="fb-comments" data-href="@FB" data-numposts="5"></div>
-
-
 }
-@section Scripts{
+
+@section Scripts
+{
     <script>
         $(document).ready(function() {
             $('input').focus(function () {
@@ -182,3 +169,4 @@
         });
     </script>
 }
+

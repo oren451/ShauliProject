@@ -42,13 +42,14 @@ namespace ShauliProject.Controllers
         // GET: Blog/Details/5
         public ActionResult Details(int? id)
         {
+            ApplicationDbContext db = getDbContext();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Post post = getDbContext().Posts.Single(m => m.PostId == id);
-            ViewBag.name = getDbContext().Users.Where(i => i.Id.Equals(id)).Select(i => new {i.Name}).Single();
+            Post post = db.Posts.Single(m => m.PostId == id);
+            ViewBag.name = (from u in db.Users where u.Id.Equals(post.UserId) select u.Name).Single();
 
             if (post == null)
             {
@@ -85,7 +86,7 @@ namespace ShauliProject.Controllers
         }
 
         // GET: Blog/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
             if (id == null)
             {
@@ -96,6 +97,7 @@ namespace ShauliProject.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(post);
         }
 
@@ -104,17 +106,31 @@ namespace ShauliProject.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Post post)
+        public ActionResult Edit(int id, string title, string content, string image, string video)
         {
             if (ModelState.IsValid)
             {
                 ApplicationDbContext db = getDbContext();
+                Post post = db.Posts.Where(i => i.PostId == id).Single();
+                post.Title = title;
+                post.Content = content;
+                if (image != string.Empty)
+                {
+                    post.Image = image;
+                }
+
+                if (video != string.Empty)
+                {
+                    post.Video = video;
+                }
+
                 post.PublishDate = DateTime.Now;
-                db.Posts.AddOrUpdate(post);
+                db.Entry(post).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Management");
             }
-            return View(post);
+
+            return View();
         }
 
         [HttpPost]
@@ -176,11 +192,18 @@ namespace ShauliProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddComment(Comment comment)
+        public ActionResult AddComment(int postid, string content)
         {
             ApplicationDbContext db = getDbContext();
+
+            Comment comment = new Comment();
             if (ModelState.IsValid)
             {
+                comment.CommentWriter = HttpContext.User.Identity.Name;
+                comment.CommentWriterSite = "";
+                comment.Title = "";
+                comment.Content = content;
+                comment.PostId = postid;
                 db.Comments.Add(comment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -239,33 +262,46 @@ namespace ShauliProject.Controllers
         public ActionResult Search(string title, string author, string content)
         {
             ApplicationDbContext db = getDbContext();
-            List<Post> posts = db.Posts.Where(c =>
-                !(title == null || title.Trim() == string.Empty) && c.Title.Contains(title)).ToList();
 
-            if (author == null || author.Trim() == string.Empty)
+            List<PostUserViewModel> list = new List<PostUserViewModel>();
+
+            if ((title == null || title.Trim() == string.Empty) && author == null || author.Trim() == string.Empty
+                && (content == null || content.Trim() == string.Empty))
             {
-                posts.AddRange(from p in db.Posts
-                    join u in db.Users on p.UserId equals u.Id
-                    where u.Name.Equals(author)
-                    select p);
+                list = (from u in db.Users
+                        join p in db.Posts
+                        on u.Id equals p.UserId
+                        select new PostUserViewModel { post = p, user = u }).ToList();
+
             }
-
-            posts.AddRange(db.Posts.Where(c =>
-                !(content == null || content.Trim() == string.Empty) && c.Content.Contains(content)).ToList());
-
-            List<Post> list = posts.Distinct().ToList();
-            List<ApplicationUser> users = new List<ApplicationUser>();
-
-            foreach (Post p in list)
+            else
             {
-                if (!users.Exists(i => i.Id.Equals(p.UserId)))
+                List<Post> posts = db.Posts.Where(c =>
+                    !(title == null || title.Trim() == string.Empty) && c.Title.Contains(title)).ToList();
+
+                if (!(author == null || author.Trim() == string.Empty))
                 {
-                    users.Add(db.Users.Where(i => i.Id.Equals(p.UserId)).Single());
+                    string selectedAuthorId = (from u in db.Users where u.Name.Equals(author) select u.Id).Single();
+                    posts.AddRange(db.Posts.Where(p => p.UserId.Equals(selectedAuthorId)).ToList());
                 }
+
+                posts.AddRange(db.Posts.Where(c =>
+                    !(content == null || content.Trim() == string.Empty) && c.Content.Contains(content)).ToList());
+
+                list = (from u in db.Users.AsEnumerable()
+                        join p in posts.Distinct()
+                            on u.Id equals p.UserId
+                        select new PostUserViewModel { post = p, user = u }).ToList();
             }
-
-            return View(list);
-
+                if(list.Count == 0)
+                {
+                    ViewBag.IsThereResults = false;
+                }
+                else
+                {
+                    ViewBag.IsThereResults = true;
+                }
+                return View(list);
+            }
         }
     }
-}

@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using System.Web.Security;
 using ShauliProject.Models;
 
 namespace ShauliProject.Controllers
@@ -14,13 +13,13 @@ namespace ShauliProject.Controllers
         // GET: FanClubs
         public ActionResult Index()
         {
-            return View(_db.Users.Where(m => m.Address == null).ToList());
+            return View(_db.Users.Where(m => m.Address != null).ToList());
         }
 
         // GET: FanClubs/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
-            if (id == null)
+            if (id == string.Empty)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -38,6 +37,8 @@ namespace ShauliProject.Controllers
         // GET: FanClubs/Create
         public ActionResult Create()
         {
+            ApplicationUser user = _db.Users.Where(m => m.UserName.Equals(HttpContext.User.Identity.Name)).Single();
+            ViewBag.isFan = user.Seniority != 0 ? true : false;
             return View();
         }
 
@@ -51,7 +52,7 @@ namespace ShauliProject.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser();
-                user = _db.Users.Find(Membership.GetUser().ProviderUserKey);
+                user = _db.Users.Where(m => m.UserName.Equals(HttpContext.User.Identity.Name)).Single();
                 user.DateOfBirth = dateOfBirth;
                 user.Seniority = seniority;
                 user.Address = address;
@@ -64,9 +65,9 @@ namespace ShauliProject.Controllers
         }
 
         // GET: FanClubs/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
-            if (id == null)
+            if (id == string.Empty)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -75,6 +76,7 @@ namespace ShauliProject.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(fanClub);
         }
 
@@ -88,7 +90,7 @@ namespace ShauliProject.Controllers
             if (ModelState.IsValid)
             {
                 ApplicationUser user = new ApplicationUser();
-                user = _db.Users.Find(Membership.GetUser().ProviderUserKey);
+                user = _db.Users.Where(i => i.UserName.Equals(HttpContext.User.Identity.Name)).Single();
                 user.DateOfBirth = dateOfBirth;
                 user.Seniority = seniority;
                 user.Address = address;
@@ -100,9 +102,9 @@ namespace ShauliProject.Controllers
         }
 
         // GET: FanClubs/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
-            if (id == null)
+            if (id == string.Empty)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -117,7 +119,7 @@ namespace ShauliProject.Controllers
         // POST: FanClubs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             ApplicationUser user = _db.Users.Find(id);
             user.DateOfBirth = null;

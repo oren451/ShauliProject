@@ -4,12 +4,9 @@
     ViewBag.Title = "Management";
 }
 
-
-
-@foreach (var item in Model)
-{
+<h2>Manage Posts</h2>
     <section id="post_section">
-            <h2>Manage Posts</h2>
+          
             <table class="table">
                 <tr>
                     <th>
@@ -19,27 +16,29 @@
                         Name
                     </th>
                 </tr>
-                <tr>
-                    <td>
-                        @Html.TextBox("Title", item.post.Title)
-                    </td>
-                    <td>
-                        @Html.TextBox("Name", item.user.Name)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.post.PostId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.post.PostId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.post.PostId }) |
-                        @Html.ActionLink("Comments", "CommentDetails", new { id = item.post.PostId })
-                    </td>
-                </tr>
-                }
-                }
+@foreach (var item in Model)
+{
+    <section>
+        <tr>
 
+            <td>
+                @Html.Label("Title", item.post.Title)
+            </td>
+            <td>
+                @Html.Label("Name", item.user.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.post.PostId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.post.PostId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.post.PostId }) |
+                @Html.ActionLink("Comments", "CommentDetails", new { id = item.post.PostId })
+            </td>
+        </tr>
+    </section>
+}
             </table>
         </section>
-    }
-}
+
         <h3>
             @Html.ActionLink("Add New Post", "Create")
         </h3>

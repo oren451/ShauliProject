@@ -391,8 +391,8 @@ C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.Owin
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.dll
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.pdb
-C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.Migrations.init.resources
-C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.init.resources
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.Migrations.init.resources
+C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache

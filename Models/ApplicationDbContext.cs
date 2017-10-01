@@ -31,7 +31,5 @@ namespace ShauliProject.Models
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new {r.RoleId, r.UserId});
             modelBuilder.Entity<ApplicationUser>().ToTable("IdentityUsers", "dbo");
         }
-
-       // public System.Data.Entity.DbSet<ShauliProject.Models.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

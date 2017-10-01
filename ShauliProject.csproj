@@ -205,9 +205,9 @@
     <Compile Include="Controllers\FanClubsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Migrations\201709302017159_init.cs" />
-    <Compile Include="Migrations\201709302017159_init.Designer.cs">
-      <DependentUpon>201709302017159_init.cs</DependentUpon>
+    <Compile Include="Migrations\201710011304559_init.cs" />
+    <Compile Include="Migrations\201710011304559_init.Designer.cs">
+      <DependentUpon>201710011304559_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\PostUserViewModel.cs" />
@@ -313,7 +313,6 @@
     <Content Include="Views\FanClubs\Delete.cshtml" />
     <Content Include="Views\FanClubs\Details.cshtml" />
     <Content Include="Views\FanClubs\Edit.cshtml" />
-    <Content Include="Views\FanClubs\Index.cshtml" />
     <Content Include="Views\Blog\Create.cshtml" />
     <Content Include="Views\Blog\Delete.cshtml" />
     <Content Include="Views\Blog\Details.cshtml" />
@@ -326,6 +325,7 @@
     <Content Include="Views\Blog\Management.cshtml" />
     <Content Include="Views\Blog\Search.cshtml" />
     <Content Include="Views\Home\Videos.cshtml" />
+    <Content Include="Views\FanClubs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -335,8 +335,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709302017159_init.resx">
-      <DependentUpon>201709302017159_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710011304559_init.resx">
+      <DependentUpon>201710011304559_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

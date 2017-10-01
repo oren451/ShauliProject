@@ -6,28 +6,24 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
-
-
 </head>
 <body>
-
 
 <header>
     <a href="/Home/Index">
         <h1 class="headline">Ha-Blog Shel Shauli</h1> </a>
 
 </header>
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-
 
         </div>
         <div class="row">
             <div class="col-sm-push-8">
                 <ul class="nav navbar-nav">
-                    <li class><a href="/Blog">Blog</a></li>
+                    <li><a href="/Blog">Blog</a></li>
                     <li><a href="/Blog/Management">Management</a></li>
                     <li><a href="/FanClubs/Index">Fans Club</a></li>
                     <li><a href="/Home/Contact">Contact</a></li>
@@ -55,15 +51,16 @@
 
 <section id="intro">
     <!-- Introduction -->
-
-    <header>
-        <h2>Do you have questions for me?</h2>
-    </header>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-
-
-    <img src="/Content/Images/intro_shauli.png" alt="Shauli"/>
+            <header>
+                <h2>Do you have questions for me?</h2>
+            </header>
+ 
+        <p>Welcome to my blog.
+            The blog of Shauli or Shaul or Shauli or Shaul.
+            Feel free to ask what you want</p>
+  
+    
+            <img src="/Content/Images/intro_shauli.png" alt="Shauli"/>
 </section>
 
 
@@ -74,44 +71,43 @@
         @RenderBody()
 
     </div>
-
-    <aside>
-        <section>
-            <header>
-                <h3>Categories</h3>
-            </header>
-            <ul>
-                <li>
-                    <a href="#">Lorem ipsum dolor</a>
-                </li>
-                <li>
-                    <a href="#">Sit amet consectetur</a>
-                </li>
-                <li>
-                    <a href="#">Adipisicing elit sed</a>
-                </li>
-            </ul>
-        </section>
-        <section>
-            <header>
-                <h3>Archives</h3>
-            </header>
-            <ul>
-                <li>
-                    <a href="#">December 2008</a>
-                </li>
-                <li>
-                    <a href="#">January 2009</a>
-                </li>
-                <li>
-                    <a href="#">February 2009</a>
-                </li>
-                <li>
-                    <a href="#">March 2009</a>
-                </li>
-            </ul>
-        </section>
-    </aside>
+        <aside>
+            <section>
+                <header>
+                    <h3>Categories</h3>
+                </header>
+                <ul>
+                    <li>
+                        <a href="#">Sports</a>
+                    </li>
+                    <li>
+                        <a href="#">Politics</a>
+                    </li>
+                    <li>
+                        <a href="#">Health</a>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <header>
+                    <h3>Archives</h3>
+                </header>
+                <ul>
+                    <li>
+                        <a href="#">June 2017</a>
+                    </li>
+                    <li>
+                        <a href="#">July 2017</a>
+                    </li>
+                    <li>
+                        <a href="#">August 2017</a>
+                    </li>
+                    <li>
+                        <a href="#">September 2017</a>
+                    </li>
+                </ul>
+            </section>
+        </aside>
 </div>
 <div class="container body-content">
     <hr/>
@@ -127,7 +123,7 @@
                 <header>
                     <h3>About</h3>
                 </header>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut la</p>
+                <p>Hello, My name is Shauli and i live at Rishpon</p>
             </section>
             <section id="blogroll">
                 <header>
@@ -182,10 +178,6 @@
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)
-
-
-
-
 
 </body>
 </html>

@@ -13,7 +13,7 @@ namespace ShauliProject.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201709302017159_init"; }
+            get { return "201710011304559_init"; }
         }
         
         string IMigrationMetadata.Source
