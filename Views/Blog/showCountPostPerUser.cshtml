@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ShauliProject.Models.IntegerNameViewModel>
+
+<h3>How many posts got every user? </h3>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Count</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.Label("name", item.name)
+        </td>
+        <td>
+            @Html.Label("integer", item.integer.ToString())
+        </td>
+    </tr>
+}
+</table>

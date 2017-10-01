@@ -210,6 +210,7 @@
       <DependentUpon>201710011304559_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\IntegerNameViewModel.cs" />
     <Compile Include="Models\PostUserViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -328,7 +329,9 @@
     <Content Include="Views\Home\Videos.cshtml" />
     <Content Include="Views\FanClubs\Index.cshtml" />
     <Content Include="assets\data.tsv" />
+    <Content Include="assets\data2.tsv" />
     <Content Include="Views\Home\Charts.cshtml" />
+    <Content Include="Views\Blog\showCountPostPerUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -303,5 +303,29 @@ namespace ShauliProject.Controllers
                 }
                 return View(list);
             }
+        
+        [ChildActionOnly]
+        public PartialViewResult showCountPostPerUser()
+        {
+            ApplicationDbContext db = getDbContext();
+            List<IntegerNameViewModel> list = new List<IntegerNameViewModel>();
+                foreach (var line in db.Posts.GroupBy(info => info.UserId)
+                        .Select(group => new {
+                            UserId = group.Key,
+                            Count = group.Count()
+                        })
+                        .OrderBy(x => x.UserId))
+            {
+                list.Add(new IntegerNameViewModel(line.Count, line.UserId));
+            }
+            
+            foreach(var item in list)
+            {
+                string temp = item.name;
+                item.name = (from u in db.Users where u.Id == temp select u.Name).Single();
+            }
+            return PartialView(list);
         }
+
     }
+}
