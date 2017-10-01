@@ -318,12 +318,6 @@ C:\Users\תומר\source\repos\ShauliProject\ShauliProject\bin\Microsoft.AspNet.
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\תומר\source\repos\ShauliProject\ShauliProject\bin\System.Diagnostics.DiagnosticSource.xml
-C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.UserRole.resources
-C:\Users\תומר\source\repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
-C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address.resources
-C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address2.resources
-C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address3.resources
-C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.Address4.resources
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ApplicationInsights.config
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.dll.config
 C:\Users\orenk\Downloads\Shauli\ShauliProject\bin\ShauliProject.dll
@@ -401,3 +395,4 @@ C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.Migrations
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache
 C:\Users\orenk\Downloads\Shauli\ShauliProject\obj\Debug\ShauliProject.csprojResolveAssemblyReference.cache
 C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.Migrations.init.resources
+C:\Users\תומר\Source\Repos\ShauliProject\ShauliProject\obj\Debug\ShauliProject.csproj.GenerateResource.Cache

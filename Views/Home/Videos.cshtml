@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "Videos";
+
+}
+<head>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+
+
+</head>
+<body>
+    <h2>Search for Shauli videos!</h2>
+
+
+
+    <div id="search">
+        <input type="text" value="שאולי ואירנה" id="searchtext"><button type="button" id="searchbutton">Find</button>
+    </div>
+
+<pre id="response">
+        </pre>
+<pre id="count"></pre>
+<pre class="vID"></pre>
+    <div id="snipp">
+        <div id=T0></div>
+    </div>
+    <br /><br /><br />
+
+</body>
+
+
+<script>
+    var nextPageToken, prevPageToken;
+    var firstPage = true;
+    $(document).ready(function () {
+
+        $('#searchbutton').click(function () {
+            // Called automatically when JavaScript client library is loaded.
+            //  alert('i am clicked');
+            gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+
+            // Called automatically when YouTube API interface is loaded .
+
+
+            // Called automatically with the response of the YouTube API request.
+
+
+
+        });
+        $('#search').append("<div id=\"page\"><button type=\"button\" id=\"prevPageButton\">Prev Page "  + "</button></div>");
+        $('#search').append("<div id=\"page\"><button type=\"button\" id=\"nextPageButton\">Next Page " + "</button></div>");
+
+        $('#nextPageButton').click(function () {
+            // alert('i am clicked');
+            console.log(nextPageToken);
+            searchYouTubeApi(nextPageToken);
+        });
+
+        $('#prevPageButton').click(function () {
+            // alert('i am clicked');
+            console.log(prevPageToken);
+            searchYouTubeApi(prevPageToken);
+        });
+
+    });
+
+    function onYouTubeApiLoad() {
+        gapi.client.setApiKey("AIzaSyCNJaPZGyFOWSc1QVZ99S5EY6aAY4rW1vI");
+        searchYouTubeApi();
+
+    }
+
+    function searchYouTubeApi(PageToken) {
+        var searchText = $('#searchtext').val();
+        $('#response').replaceWith("<div id=\"searching\"><b>Searching for " + searchText + "</b></div>");
+
+        // Use the JavaScript client library to create a search.list() API call to Youtube's "Search" resource
+        var request = gapi.client.youtube.search.list(
+        {
+            part: 'snippet',
+            q: searchText,
+            maxResults: 2,
+            pageToken: PageToken
+        });
+
+        // Send the request to the API server,
+        // and invoke onSearchRepsonse() with the response.
+        request.execute(onSearchResponse);
+
+    }
+
+    function onSearchResponse(response) {
+
+        var responseString = JSON.stringify(response, '', 2);
+        var resultCount = response.pageInfo.totalResults;
+        nextPageToken = response.nextPageToken;
+        prevPageToken = response.prevPageToken;
+      $('#count').replaceWith("<div id=count><b>Found " + resultCount + " Results.</b></div>");
+
+
+        for (var i = 0; i < response.items.length; i++) {
+            //store each JSON value in a variable
+            var publishedAt = response.items[i].snippet.publishedAt;
+            var channelId = response.items[i].snippet.channelId;
+            var title = response.items[i].snippet.title;
+            var description = response.items[i].snippet.description;
+            var thumbnails_default = response.items[i].snippet.thumbnails.default.url;
+            var thumbnails_medium = response.items[i].snippet.thumbnails.medium.url;
+            var thumbnails_high = response.items[i].snippet.thumbnails.high.url;
+            var channelTitle = response.items[i].snippet.channelTitle;
+            var liveBroadcastContent = response.items[i].snippet.liveBroadcastContent;
+            var videoID = response.items[i].id.videoId;
+
+            if (firstPage === true) {
+                //print the stored variables in a div element
+                $('#snipp').append("<div id=T><b>Title:</b> " + title + "</div><div id=P><b>Published on: </b>" + publishedAt + "</div><div id=CT><b>Channel Title: </b>" + channelTitle + "</div><a id=linktoVid href='http://www.youtube.com/watch?v=" + videoID +  "\"/></a><br/><br/><a id=linktoVid1 href='http://www.youtube.com/watch?v=" + videoID + "'><video id=vidTD width=\"320\" height=\"240\" controls poster=" + thumbnails_default + "><source src='http://www.youtube.com/watch?v=" + videoID + ">Your browser does not support the video tag.</video></a><br/><br/>");
+
+            }
+            else {
+                $('#T').replaceWith("<div id=T><b>Title:</b> " + title + "</div>");
+                $('#C').replaceWith("<div id=C><b>Channel ID: </b>" + channelId + "</div>");
+                $('#D').replaceWith("<div id=D><b>Description </b>" + description + "</div>");
+                $('#P').replaceWith("<div id=P><b>Published on: </b>" + publishedAt + "</div>");
+                $('#CT').replaceWith("<div id=CT><b>Channel Title: </b>" + channelTitle + "</div>");
+                $('#linktoVid').replaceWith("<a id=linktoVid href='http://www.youtube.com/watch v=" + videoID + "'><img id=imgTD src=\"" + thumbnails_default + "\"/></a><br/><br/><a id=linktoVid1 href='http://www.youtube.com/watch?v=" + videoID + "'><video id=vidTD width=\"320\" height=\"240\" controls poster=" + thumbnails_default + "><source src='http://www.youtube.com/watch?v=" + videoID + ">Your browser does not support the video tag.</video></a><br/><br/>");
+            }
+
+
+
+        }
+
+        firstPage = false;
+    }
+
+</script>

@@ -27,6 +27,13 @@ namespace ShauliProject.Controllers
             return View();
         }
 
+        public ActionResult Videos()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
 
 
     }
