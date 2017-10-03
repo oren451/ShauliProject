@@ -172,7 +172,7 @@ ul.navbar-nav{
 #mainContent {
     display: table-cell;
     width: 920px;
-    padding-right: 112px;
+   /*padding-right: 112px;*/ 
     padding-left: 150px;
     padding-bottom: 50px
 }

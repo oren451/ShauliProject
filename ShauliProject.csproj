@@ -277,6 +277,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Videos\1.mp4" />
+    <Content Include="Videos\2.mp4" />
+    <Content Include="Videos\3.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -329,7 +332,6 @@
     <Content Include="Views\Home\Videos.cshtml" />
     <Content Include="Views\FanClubs\Index.cshtml" />
     <Content Include="assets\data.tsv" />
-    <Content Include="assets\data2.tsv" />
     <Content Include="Views\Home\Charts.cshtml" />
     <Content Include="Views\Blog\showCountPostPerUser.cshtml" />
   </ItemGroup>
